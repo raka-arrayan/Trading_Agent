@@ -15,7 +15,7 @@ def get_llm(role="analyst", provider="ollama"):
     if provider == "ollama":
         # Default local model for development/smoke test
         return ChatOllama(
-            model="llama3.1:8b",
+            model="llama3.1:latest",
             temperature=temperature,
             base_url="http://localhost:11434"
         )

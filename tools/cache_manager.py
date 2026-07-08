@@ -54,3 +54,28 @@ class CacheManager:
         if filepath.exists():
             return pd.read_csv(filepath, parse_dates=parse_dates, index_col=index_col)
         return None
+
+    # --- Master CSV methods (ticker-level, no per-date duplication) ---
+
+    def _get_ticker_dir(self, ticker: str) -> Path:
+        """Returns the ticker-level cache directory (e.g., data/cache/BBCA.JK/)."""
+        safe_ticker = ticker.replace('^', '')
+        ticker_dir = self.base_dir / safe_ticker
+        ticker_dir.mkdir(parents=True, exist_ok=True)
+        return ticker_dir
+
+    def save_master_csv(self, ticker: str, filename: str, df: pd.DataFrame):
+        """Saves a DataFrame as a master CSV at the ticker level."""
+        ticker_dir = self._get_ticker_dir(ticker)
+        filepath = ticker_dir / filename
+        df.to_csv(filepath)
+        print(f"Saved master CSV: {filepath}")
+
+    def load_master_csv(self, ticker: str, filename: str, parse_dates=None, index_col=None) -> Union[pd.DataFrame, None]:
+        """Loads a master CSV from the ticker level if it exists, otherwise returns None."""
+        ticker_dir = self._get_ticker_dir(ticker)
+        filepath = ticker_dir / filename
+        
+        if filepath.exists():
+            return pd.read_csv(filepath, parse_dates=parse_dates, index_col=index_col)
+        return None

@@ -51,6 +51,54 @@ class YFinanceFetcher:
         
         return df
 
+    def fetch_ohlcv_master(self, ticker: str, start_date: str, end_date: str) -> pd.DataFrame:
+        """
+        Downloads OHLCV data once for the full backtest range (with 2-year lookback
+        for indicator calculation) and saves it as a single master CSV at the 
+        ticker level: data/cache/{ticker}/ohlcv_master.csv
+        
+        The backtester slices from this master at runtime to avoid look-ahead bias.
+        
+        Returns the full DataFrame.
+        """
+        end_dt = datetime.strptime(end_date, "%Y-%m-%d")
+        # 2-year lookback so indicators (e.g., 200-SMA) have enough history
+        lookback_start_dt = datetime.strptime(start_date, "%Y-%m-%d") - timedelta(days=365 * 2)
+        # yfinance end is exclusive
+        yf_end_dt = end_dt + timedelta(days=1)
+
+        print(f"[Master Fetch] Downloading OHLCV for {ticker} "
+              f"from {lookback_start_dt.strftime('%Y-%m-%d')} to {end_date} ...")
+        
+        df = yf.download(
+            ticker,
+            start=lookback_start_dt.strftime("%Y-%m-%d"),
+            end=yf_end_dt.strftime("%Y-%m-%d"),
+            progress=False
+        )
+        
+        if df.empty:
+            print(f"WARNING: yfinance returned NO data for {ticker}. "
+                  f"Check your internet connection or ticker symbol.")
+            return df
+
+        # Flatten multi-index columns (yfinance >= 0.2.33 quirk)
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
+
+        # Lowercase columns for stockstats compatibility
+        df.columns = [col.lower() for col in df.columns]
+        df.index.name = 'date'
+
+        # Remove duplicate column names (yfinance sometimes returns dupes)
+        df = df.loc[:, ~df.columns.duplicated()]
+
+        # Save as master CSV at ticker level
+        self.cache_manager.save_master_csv(ticker, "ohlcv_master.csv", df)
+        
+        print(f"[Master Fetch] Saved {len(df)} rows for {ticker}.")
+        return df
+
     def fetch_fundamentals(self, ticker: str, end_date: str) -> Dict[str, Any]:
         """
         Fetches basic fundamentals (P/E, Market Cap) and financial statements.
