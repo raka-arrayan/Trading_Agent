@@ -5,6 +5,7 @@ from typing import List, Dict
 class NewsFetcher:
     """
     Fetches financial news from Indonesian RSS feeds.
+    Saves as master_news.json at the ticker level via CacheManager.
     """
     def __init__(self, cache_manager):
         self.cache_manager = cache_manager
@@ -39,14 +40,16 @@ class NewsFetcher:
             })
         return news_list
 
-    def fetch_all_news(self, ticker: str, date_str: str) -> List[Dict]:
+    def fetch_all_news(self, ticker: str) -> List[Dict]:
         """
         Fetches news related to the ticker and general market news.
+        Saves as master_news.json at the ticker level.
+        
         Note: RSS feeds typically only provide recent news. For historical backtesting, 
         this would normally read from a pre-scraped historical database.
         For the pipeline foundation, we fetch live RSS and save it to the cache.
         """
-        print(f"Fetching news for {ticker}...")
+        print(f"  [Fetch] Downloading news for {ticker}...")
         
         # 1. Google News specific to ticker
         ticker_base = ticker.replace('.JK', '')
@@ -71,7 +74,7 @@ class NewsFetcher:
                 seen_titles.add(n['title'])
                 unique_news.append(n)
                 
-        # Save to cache
-        self.cache_manager.save_json(ticker, date_str, "news.json", unique_news)
+        # Save as master JSON at ticker level
+        self.cache_manager.save_master_json(ticker, "master_news.json", unique_news)
         
         return unique_news

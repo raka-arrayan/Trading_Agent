@@ -5,57 +5,17 @@ from typing import Dict, Any
 
 class YFinanceFetcher:
     """
-    Fetches market data and fundamentals from Yahoo Finance and caches it.
+    Fetches market data and fundamentals from Yahoo Finance.
+    All data is saved as master files at the ticker level via CacheManager.
     """
     def __init__(self, cache_manager):
         self.cache_manager = cache_manager
         
-    def fetch_ohlcv(self, ticker: str, end_date: str, start_date: str = None) -> pd.DataFrame:
+    def fetch_ohlcv(self, ticker: str, start_date: str, end_date: str) -> pd.DataFrame:
         """
-        Fetches OHLCV data up to end_date. 
-        If start_date is not provided, fetches 2 years of history to ensure enough data for indicators.
-        Saves to cache.
-        """
-        end_dt = datetime.strptime(end_date, "%Y-%m-%d")
-        
-        if start_date:
-            start_dt = datetime.strptime(start_date, "%Y-%m-%d")
-        else:
-            # Default to 2 years before end_date for indicators like 200-SMA
-            start_dt = end_dt - timedelta(days=365*2)
-            
-        # yfinance download expects end date to be exclusive, so we add 1 day
-        yf_end_dt = end_dt + timedelta(days=1)
-        
-        # Download data
-        print(f"Fetching OHLCV for {ticker} from {start_dt.strftime('%Y-%m-%d')} to {end_date}...")
-        df = yf.download(ticker, start=start_dt.strftime("%Y-%m-%d"), end=yf_end_dt.strftime("%Y-%m-%d"), progress=False)
-        
-        if df.empty:
-            print(f"Warning: No OHLCV data found for {ticker} between {start_date} and {end_date}")
-            return df
-            
-        # yfinance >= 0.2.33 returns multi-index columns for single tickers if auto_adjust is false or other cases
-        # Flatten if necessary to match standard stockstats format (lowercase columns: open, close, high, low, volume)
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(0)
-            
-        # Convert columns to lowercase for stockstats compatibility
-        df.columns = [col.lower() for col in df.columns]
-        
-        # Ensure index is named 'date'
-        df.index.name = 'date'
-            
-        # Save to cache
-        self.cache_manager.save_csv(ticker, end_date, "ohlcv.csv", df)
-        
-        return df
-
-    def fetch_ohlcv_master(self, ticker: str, start_date: str, end_date: str) -> pd.DataFrame:
-        """
-        Downloads OHLCV data once for the full backtest range (with 2-year lookback
+        Downloads OHLCV data for the full backtest range (with 2-year lookback
         for indicator calculation) and saves it as a single master CSV at the 
-        ticker level: data/cache/{ticker}/ohlcv_master.csv
+        ticker level: data/cache/{ticker}/master_ohlcv.csv
         
         The backtester slices from this master at runtime to avoid look-ahead bias.
         
@@ -67,7 +27,7 @@ class YFinanceFetcher:
         # yfinance end is exclusive
         yf_end_dt = end_dt + timedelta(days=1)
 
-        print(f"[Master Fetch] Downloading OHLCV for {ticker} "
+        print(f"  [Fetch] Downloading OHLCV for {ticker} "
               f"from {lookback_start_dt.strftime('%Y-%m-%d')} to {end_date} ...")
         
         df = yf.download(
@@ -78,7 +38,7 @@ class YFinanceFetcher:
         )
         
         if df.empty:
-            print(f"WARNING: yfinance returned NO data for {ticker}. "
+            print(f"  WARNING: yfinance returned NO data for {ticker}. "
                   f"Check your internet connection or ticker symbol.")
             return df
 
@@ -94,25 +54,25 @@ class YFinanceFetcher:
         df = df.loc[:, ~df.columns.duplicated()]
 
         # Save as master CSV at ticker level
-        self.cache_manager.save_master_csv(ticker, "ohlcv_master.csv", df)
+        self.cache_manager.save_master_csv(ticker, "master_ohlcv.csv", df)
         
-        print(f"[Master Fetch] Saved {len(df)} rows for {ticker}.")
         return df
 
-    def fetch_fundamentals(self, ticker: str, end_date: str) -> Dict[str, Any]:
+    def fetch_fundamentals(self, ticker: str) -> Dict[str, Any]:
         """
         Fetches basic fundamentals (P/E, Market Cap) and financial statements.
-        Saves to cache as JSON. Note: For accurate point-in-time fundamentals, 
-        yfinance has limitations as it only provides current info and latest statements.
+        Saves to master_fundamentals.json at the ticker level.
+        
+        Note: yfinance only provides current snapshot, not historical point-in-time data.
         """
-        print(f"Fetching fundamentals for {ticker}...")
+        print(f"  [Fetch] Downloading fundamentals for {ticker}...")
         stock = yf.Ticker(ticker)
         
         info = {}
         try:
             info = stock.info
         except Exception as e:
-            print(f"Warning: Failed to fetch info for {ticker}: {e}")
+            print(f"  Warning: Failed to fetch info for {ticker}: {e}")
             
         fundamentals = {
             "info": {
@@ -144,7 +104,7 @@ class YFinanceFetcher:
         except Exception:
             pass
             
-        # Save to cache
-        self.cache_manager.save_json(ticker, end_date, "fundamentals.json", fundamentals)
+        # Save as master JSON at ticker level
+        self.cache_manager.save_master_json(ticker, "master_fundamentals.json", fundamentals)
         
         return fundamentals

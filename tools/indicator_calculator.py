@@ -1,29 +1,36 @@
 import pandas as pd
 from stockstats import wrap
+import math
 
 class TechnicalIndicatorCalculator:
     """
-    Calculates technical indicators using the stockstats library based on cached OHLCV data.
+    Calculates technical indicators using the stockstats library.
+    
+    Operates purely in-memory: receives a DataFrame directly (already sliced
+    up to the target date by the backtester) and returns a dict of indicators.
+    No file I/O is performed.
     """
-    def __init__(self, cache_manager):
-        self.cache_manager = cache_manager
+
+    def calculate_indicators(self, df: pd.DataFrame, date_str: str) -> dict:
+        """
+        Calculates technical indicators from the given OHLCV DataFrame.
         
-    def calculate_indicators(self, ticker: str, date_str: str) -> dict:
+        Args:
+            df: OHLCV DataFrame (already sliced up to date_str to prevent look-ahead bias).
+                Must have columns: open, high, low, close, volume. Index must be DatetimeIndex.
+            date_str: The target date string (YYYY-MM-DD) to extract indicators for.
+            
+        Returns:
+            Dict of indicator values for the target date, or empty dict if insufficient data.
         """
-        Reads OHLCV from cache, calculates indicators,
-        returns the latest indicators for the target date, and saves to cache.
-        """
-        print(f"Calculating technical indicators for {ticker} up to {date_str}...")
-        # Load OHLCV data from cache
-        df = self.cache_manager.load_csv(ticker, date_str, "ohlcv.csv", parse_dates=['date'], index_col='date')
         if df is None or df.empty:
-            print(f"Warning: No OHLCV data in cache for {ticker} on {date_str}")
+            print(f"  Warning: Empty DataFrame for indicator calculation on {date_str}")
             return {}
             
-        # stockstats modifies the dataframe in-place, so we wrap it
-        stock = wrap(df)
+        # stockstats modifies the dataframe in-place, so we wrap a copy
+        stock = wrap(df.copy())
         
-        # Trigger calculation of standard indicators used by TradingAgents/baseline
+        # Trigger calculation of standard indicators used by TradingAgents
         # Stockstats calculates them lazily when accessed
         _ = stock['macd']
         _ = stock['macds']
@@ -44,7 +51,7 @@ class TechnicalIndicatorCalculator:
         available_dates = df.index[df.index <= target_dt]
         
         if len(available_dates) == 0:
-            print(f"Warning: No data available on or before {date_str} for {ticker}")
+            print(f"  Warning: No data available on or before {date_str}")
             return {}
             
         latest_date = available_dates[-1]
@@ -52,14 +59,17 @@ class TechnicalIndicatorCalculator:
         
         # Clean up any potential NaN values and convert to native python float
         def safe_float(val):
-            import math
-            if pd.isna(val) or math.isnan(val):
+            if pd.isna(val) or (isinstance(val, float) and math.isnan(val)):
                 return None
             return float(val)
             
         indicators = {
             "date": latest_date.strftime("%Y-%m-%d"),
             "close": safe_float(latest_row.get('close')),
+            "open": safe_float(latest_row.get('open')),
+            "high": safe_float(latest_row.get('high')),
+            "low": safe_float(latest_row.get('low')),
+            "volume": safe_float(latest_row.get('volume')),
             "macd": safe_float(latest_row.get('macd')),
             "macds": safe_float(latest_row.get('macds')),
             "macdh": safe_float(latest_row.get('macdh')),
@@ -73,8 +83,5 @@ class TechnicalIndicatorCalculator:
             "sma_20": safe_float(latest_row.get('close_20_sma')),
             "sma_50": safe_float(latest_row.get('close_50_sma')),
         }
-        
-        # Save calculated indicators to cache
-        self.cache_manager.save_json(ticker, date_str, "indicators.json", indicators)
         
         return indicators

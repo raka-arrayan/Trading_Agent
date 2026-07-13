@@ -13,7 +13,7 @@ Instructions:
 1. Decide whether to enter a new position, add to an existing position, reduce, or exit.
 2. Determine a specific target allocation or position size adjustment based on the risk profile.
 3. Be explicit about your recommendation.
-4. Limit your recommendation to a MAXIMUM of 3 sentences."""
+4. Tuliskan rekomendasi HANYA dalam teks polos (plain text) tanpa format Markdown (tanpa **, *, atau bullet points). Gunakan Bahasa Indonesia formal dalam bentuk paragraf naratif padat (maksimal 3 kalimat lengkap). Dilarang keras menggunakan elipsis (...). Pastikan kalimat berakhir dengan titik."""
 
 TRADING_AGENT_PROMPT = """You are the Execution Trading Agent.
 Your sole responsibility is to translate the Portfolio Manager's recommendation into a strict machine-readable trading order.

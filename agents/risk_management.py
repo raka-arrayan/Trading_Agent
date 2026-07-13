@@ -3,6 +3,28 @@ from config.llm_config import get_llm
 from langchain_core.messages import HumanMessage, SystemMessage
 import config.prompts.risk_prompts as prompts
 import json
+import re
+
+
+def _extract_strategy(text: str) -> str:
+    """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
+    if not text:
+        return "HOLD"
+    upper = text.upper()
+    buy_count = len(re.findall(r'\bBUY\b', upper))
+    sell_count = len(re.findall(r'\bSELL\b', upper))
+    hold_count = len(re.findall(r'\bHOLD\b', upper))
+    
+    counts = {"BUY": buy_count, "SELL": sell_count, "HOLD": hold_count}
+    return max(counts, key=counts.get) if max(counts.values()) > 0 else "HOLD"
+
+
+def _clean_text(text: str) -> str:
+    """Clean text for log display without truncating."""
+    if not text:
+        return "(kosong)"
+    return text.replace('\n', ' ').strip()
+
 
 def conservative_risk_analyst(state: TradingState):
     print("--- Running Conservative Risk Analyst ---")
@@ -19,6 +41,8 @@ def conservative_risk_analyst(state: TradingState):
     except Exception as e:
         print(f"[Cons_Risk] LLM Error: {e}")
         argument = f"Error generating argument: {e}"
+
+    # Print moved to backtester.py
         
     return {"risk_debate": [{"agent": "ConservativeRisk", "message": argument}]}
 
@@ -37,6 +61,8 @@ def aggressive_risk_analyst(state: TradingState):
     except Exception as e:
         print(f"[Aggr_Risk] LLM Error: {e}")
         argument = f"Error generating argument: {e}"
+
+    # Print moved to backtester.py
         
     return {"risk_debate": [{"agent": "AggressiveRisk", "message": argument}]}
 
@@ -56,5 +82,7 @@ def risk_facilitator(state: TradingState):
     except Exception as e:
         print(f"[Risk_Facilitator] LLM Error: {e}")
         final_consensus = f"Error generating consensus: {e}"
+
+    # Print moved to backtester.py
         
     return {"risk_consensus": final_consensus}

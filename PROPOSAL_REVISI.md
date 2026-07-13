@@ -27,7 +27,7 @@ Selain itu, terdapat tantangan teknis dalam adaptasi sistem multi-agen ke pasar 
 
 ### 1.3 Tujuan Penelitian
 
-1. Merancang dan mengimplementasikan arsitektur *Multi-Agent System* yang terdiri atas Tim Analis (Fundamental, Sentimen, Berita, Teknikal), Tim Peneliti (Bullish–Bearish) beserta Fasilitator Debat, Agen Trader, Tim Manajemen Risiko (Agresif–Netral–Konservatif) beserta Fasilitator, dan Portfolio Manager yang mampu memproses data saham perbankan IHSG dan menghasilkan keputusan investasi terstruktur.
+1. Merancang dan mengimplementasikan arsitektur *Multi-Agent System* yang terdiri atas Tim Analis (Fundamental, Sentimen, Macro, Teknikal), Tim Peneliti (Bullish–Bearish) beserta Fasilitator Debat, Agen Trader, Tim Manajemen Risiko (Aggressive–Conservative) beserta Fasilitator, dan Portfolio Manager yang mampu memproses data saham perbankan IHSG dan menghasilkan keputusan investasi terstruktur.
 2. Mengukur peningkatan kualitas keputusan investasi akibat mekanisme debat multi-agen melalui *ablation study*, membandingkan konfigurasi sistem lengkap (MAS + debat), MAS tanpa debat, dan agen tunggal, dengan target minimal terjadi peningkatan *win-rate* keputusan sebesar ≥10% pada konfigurasi sistem lengkap dibandingkan konfigurasi tanpa debat.
 3. Mengevaluasi performa sistem melalui simulasi *backtesting* pada 3 emiten *big-cap* sektor perbankan IHSG (BBCA, BBRI, BMRI) periode 2024–2025, dengan target sistem mampu menghasilkan *Cumulative Return* dan *Sharpe Ratio* yang lebih tinggi pada mayoritas emiten dan mayoritas baseline, serta *Maximum Drawdown* yang setara atau lebih rendah dibandingkan rata-rata strategi *rule-based* pembanding.
 
@@ -41,7 +41,7 @@ Selain itu, terdapat tantangan teknis dalam adaptasi sistem multi-agen ke pasar 
    - **Data fundamental perbankan:** Data umum (laporan laba-rugi, neraca) diperoleh dari `yfinance`; data spesifik perbankan (NPL, CAR, NIM) dikompilasi secara manual dari laporan keuangan kuartalan yang dipublikasikan di idx.co.id (total ~72 data poin: 3 emiten × 8 kuartal × 3 rasio).
    - **Analisis sentimen:** Dilakukan secara langsung oleh agen LLM terhadap teks berita berbahasa Indonesia, tanpa tahap translasi terpisah.
    - Penelitian **tidak menggunakan** API premium (Bloomberg Terminal, Refinitiv) maupun API berbayar (Finnhub, Alpha Vantage) yang tidak memiliki cakupan memadai untuk saham Indonesia.
-4. Karena keterbatasan ketersediaan API data terstruktur di pasar Indonesia dibandingkan pasar AS (yang menjadi konteks paper acuan), agen Sentimen dan agen Berita beroperasi dengan volume data yang lebih rendah. Dampak perbedaan ketersediaan data ini dianalisis sebagai bagian dari analisis kualitatif eksplainabilitas sistem.
+4. Karena keterbatasan ketersediaan API data terstruktur di pasar Indonesia dibandingkan pasar AS (yang menjadi konteks paper acuan), agen Sentimen dan agen Macro beroperasi dengan volume data yang lebih rendah. Dampak perbedaan ketersediaan data ini dianalisis sebagai bagian dari analisis kualitatif eksplainabilitas sistem.
 5. Sistem tidak melakukan eksekusi transaksi riil (*live trading*); seluruh evaluasi dilakukan dalam simulasi *paper trading* / *backtesting* historis menggunakan *library* Backtrader.
 6. Model LLM yang digunakan mengikuti strategi *hybrid* bertingkat untuk efisiensi biaya:
    - **Tahap development:** Model lokal melalui **Ollama** (misal: Llama 3.1 8B untuk *quick-thinking*, Qwen 2.5 14B untuk *deep-thinking*) untuk iterasi cepat tanpa biaya API.
@@ -133,17 +133,17 @@ Penelitian ini menggunakan pendekatan **Design Science Research (DSR)**, karena 
 - Data historis BI-7DRR diperoleh dari situs Bank Indonesia (`bi.go.id/id/statistik/indikator/bi-7day-rr.aspx`).
 - Konversi ke *daily risk-free rate*: $R_{f,daily} = (1 + R_{f,annual})^{1/252} - 1$
 
-#### 3.2.5 Strategi Pencegahan *Look-Ahead Bias*
-- **Seluruh data dikumpulkan dan di-*cache* secara lokal** sebelum simulasi *backtesting* dimulai.
-- Setiap agen hanya mengakses data dari *cache* dengan filter tanggal ≤ tanggal simulasi berjalan (*current_date*).
-- Struktur *cache*: `data/cache/{ticker}/{date}/` dengan file terpisah untuk setiap jenis data (harga, berita, fundamental).
-- Prinsip ini mengikuti metodologi pada paper acuan [1] untuk menjamin validitas simulasi.
+#### 3.2.5 Strategi Pencegahan *Look-Ahead Bias* dan *Centralized Caching*
+- **Seluruh data dikumpulkan dan di-*cache* secara terpusat (Centralized Caching)** di tingkat *ticker* sebelum simulasi *backtesting* dimulai.
+- Untuk efisiensi ruang penyimpanan dan kecepatan I/O, sistem tidak lagi membuat folder per tanggal (seperti rancangan awal), melainkan menggunakan satu *master file* per sumber data (`master_ohlcv.csv`, `master_fundamentals.json`, `master_news.json`).
+- Proses *slicing* (pemotongan data berdasarkan tanggal simulasi berjalan) dilakukan secara *in-memory* menggunakan filter Pandas Dataframe. Setiap agen hanya menerima potongan data dengan tanggal ≤ tanggal simulasi berjalan (*current_date*), sehingga *look-ahead bias* dihindari secara mutlak dan terprogram.
+- Struktur *cache*: `data/cache/{ticker}/master_*`.
 
 ### 3.3 Tahap 3 — Perancangan Arsitektur Multi-Agen
 
 - Mendefinisikan peran, tujuan (*goal*), batasan (*constraint*), *tools*, dan *system prompt* untuk setiap agen (dijelaskan rinci pada BAB IV).
 - Merancang **skema global state** (`TradingState`) sebagai struktur data TypedDict yang menjadi wadah pertukaran informasi antar-agen, mengadopsi pola *publish-subscribe* dari MetaGPT [2].
-- Merancang mekanisme debat multi-putaran antara agen Bullish dan Bearish (pada Tim Peneliti) serta antara agen Risky, Neutral, dan Safe (pada Tim Manajemen Risiko), masing-masing dengan **agen Fasilitator Debat** yang merangkum hasil debat menjadi output terstruktur.
+- Merancang mekanisme debat multi-putaran antara agen Bullish dan Bearish (pada Tim Peneliti) serta antara agen Aggressive dan Conservative (pada Tim Manajemen Risiko), masing-masing dengan **agen Fasilitator Debat** yang merangkum hasil debat menjadi output terstruktur.
 - Merancang **tiga konfigurasi sistem** untuk *ablation study*:
   1. **Full MAS:** Sistem lengkap dengan mekanisme debat.
   2. **MAS tanpa Debat:** Bullish & Bearish digabung menjadi 1 Researcher; 3 Risk Manager digabung menjadi 1.
@@ -205,7 +205,7 @@ Empat agen analis bekerja secara **paralel** mengumpulkan dan merangkum data men
 
 - **Fundamental Analyst**: Menganalisis laporan keuangan, rasio keuangan umum (ROE, ROA, P/E, P/B) serta rasio spesifik perbankan (NPL, CAR, NIM), dan data *insider* jika tersedia.
 - **Sentiment Analyst**: Menganalisis sentimen publik terhadap emiten berdasarkan berita dan diskusi online, dengan kemampuan memproses teks **berbahasa Indonesia** secara langsung.
-- **News Analyst**: Menganalisis berita makroekonomi (kebijakan BI-7DRR, regulasi OJK, kondisi global, nilai tukar rupiah) yang memengaruhi sektor perbankan.
+- **Macro Analyst**: Menganalisis kondisi makroekonomi (kebijakan BI-7DRR, regulasi OJK, kondisi global, nilai tukar rupiah) yang memengaruhi sektor dan emiten.
 - **Technical Analyst**: Menghitung dan menginterpretasikan indikator teknikal (MACD, RSI, Bollinger Bands, ADX, SMA/EMA) berdasarkan data harga historis menggunakan *library* `stockstats`.
 
 #### 4.1.2 Tim Peneliti (*Researcher Team*) — Mekanisme Debat
@@ -213,23 +213,20 @@ Terdiri atas tiga agen:
 
 - **Bullish Researcher**: Menyusun argumen investasi positif berdasarkan laporan Tim Analis.
 - **Bearish Researcher**: Menyusun argumen peringatan/negatif berdasarkan laporan Tim Analis.
-- **Research Debate Facilitator**: Memoderasi debat multi-putaran, menentukan kapan debat cukup, dan menghasilkan **ringkasan terstruktur** yang menangkap argumen terkuat dari kedua sisi.
+- **Research Debate Facilitator**: Memoderasi debat, menentukan kesimpulan, dan menghasilkan **ringkasan terstruktur** yang menangkap argumen terkuat dari kedua sisi.
 
-#### 4.1.3 Agen Trader (*Trader Agent*)
-Menyintesis ringkasan debat Tim Peneliti menjadi usulan keputusan transaksi awal (Buy/Hold/Sell) beserta alasan pendukung dan tingkat keyakinan.
+#### 4.1.3 Tim Manajemen Risiko (*Risk Management Team*) — Mekanisme Debat
+Terdiri atas tiga agen:
 
-#### 4.1.4 Tim Manajemen Risiko (*Risk Management Team*) — Mekanisme Debat
-Terdiri atas empat agen:
+- **Aggressive Risk Analyst**: Mengevaluasi dari perspektif pengambilan risiko secara maksimal untuk *return* tinggi.
+- **Conservative Risk Analyst**: Mengevaluasi dari perspektif kehati-hatian, perlindungan modal, dan penghindaran volatilitas ekstrem.
+- **Risk Facilitator**: Memoderasi perdebatan kedua profil risiko ekstrem dan menghasilkan rekomendasi risiko terkonsensus yang adaptif.
 
-- **Aggressive (Risky) Risk Manager**: Mengevaluasi dari perspektif risiko agresif.
-- **Moderate (Neutral) Risk Manager**: Mengevaluasi dari perspektif seimbang.
-- **Conservative (Safe) Risk Manager**: Mengevaluasi dari perspektif konservatif.
-- **Risk Debate Facilitator**: Memoderasi debat tiga-arah dan menghasilkan rekomendasi risiko terkonsensus.
+#### 4.1.4 Tim Eksekusi (*Execution Team*)
+- **Portfolio Manager**: Melakukan keputusan final (approve/reject/adjust) atas rekomendasi riset dan risiko, mempertimbangkan kondisi portofolio (saldo kas, posisi terbuka).
+- **Trading Agent**: Menerjemahkan keputusan Portfolio Manager menjadi order kuantitatif (*action*, *quantity* dalam lot, *confidence*) dalam format mesin yang terstandarisasi.
 
-#### 4.1.5 Portfolio Manager (*Fund Manager*)
-Melakukan keputusan final (approve/reject/adjust) atas rekomendasi Tim Manajemen Risiko, dengan mempertimbangkan kondisi portofolio keseluruhan (saldo kas, posisi terbuka, eksposur risiko saat ini). Peran ini mengadopsi "Portfolio Manager" pada paper acuan [1].
-
-**Total: 13 agen** (4 Analis + 2 Peneliti + 1 Fasilitator Riset + 1 Trader + 3 Risk Manager + 1 Fasilitator Risiko + 1 Portfolio Manager).
+**Total: 12 agen** (4 Analis + 3 Peneliti + 3 Manajer Risiko + 1 Portfolio Manager + 1 Trading Agent).
 
 ### 4.2 Skema Global State (*State Schema*)
 
@@ -273,19 +270,20 @@ class TradingState(TypedDict):
 
 ### 4.3 Mekanisme Input & Output per Agen
 
-| Agen | Input Data | Tools yang Digunakan | Format Output |
-|------|-----------|---------------------|----------------|
-| **Fundamental Analyst** | Laporan keuangan (yfinance), rasio perbankan (CSV manual) | `get_yfinance_financials`, `load_banking_ratios` | JSON: `{"valuation_score": ..., "banking_health": ..., "key_risks": [...]}` + Markdown naratif |
-| **Sentiment Analyst** | Berita terkini (Google News RSS, RSS portal berita Indonesia) | `fetch_news_rss`, `analyze_sentiment_llm` | JSON: `{"sentiment_trend": "positif/negatif/netral", "confidence": ..., "key_topics": [...]}` |
-| **News Analyst** | Berita makroekonomi (RSS feed), kebijakan BI/OJK | `fetch_news_rss`, `fetch_bi_rate` | Markdown naratif + JSON: `{"macro_impact": ..., "categories": ["moneter", "regulasi", "global"]}` |
-| **Technical Analyst** | Data OHLCV (yfinance), indikator (stockstats) | `get_yfinance_ohlcv`, `calculate_indicators` | JSON: `{"trend": "bullish/bearish/sideways", "indicators": {...}, "signals": [...]}` |
-| **Bullish Researcher** | Seluruh laporan Tim Analis (dari global state) | — (LLM reasoning only) | Argumen naratif terstruktur (Markdown) |
-| **Bearish Researcher** | Seluruh laporan Tim Analis (dari global state) | — (LLM reasoning only) | Argumen naratif terstruktur (Markdown) |
-| **Research Facilitator** | Argumen debat kedua Researcher | — (LLM reasoning only) | JSON: `{"dominant_view": ..., "key_points": [...], "consensus_level": ...}` |
-| **Trader** | Ringkasan debat peneliti (dari global state) | — (LLM reasoning only) | JSON: `{"action": "BUY/HOLD/SELL", "confidence": ..., "rationale": "..."}` |
-| **Risk Managers (3x)** | Usulan Trader + kondisi pasar | — (LLM reasoning only) | Penilaian risiko per perspektif (Markdown) |
-| **Risk Facilitator** | Penilaian ketiga Risk Manager | — (LLM reasoning only) | JSON: `{"risk_adjusted_action": ..., "risk_level": ..., "conditions": [...]}` |
-| **Portfolio Manager** | Ringkasan risiko + kondisi portofolio | — (LLM reasoning only) | JSON: `{"final_decision": ..., "confidence": ..., "quantity": ..., "summary": ...}` |
+| Agen | Input Data | Format Output |
+|------|-----------|----------------|
+| **Fundamental Analyst** | Laporan keuangan (yfinance), rasio perbankan | Paragraf naratif (maksimal 3 kalimat) |
+| **Sentiment Analyst** | Berita terkini (Google News RSS, dll.) | Paragraf naratif (maksimal 3 kalimat) |
+| **Macro Analyst** | Berita makroekonomi (RSS feed), BI rate | Paragraf naratif (maksimal 3 kalimat) |
+| **Technical Analyst** | Data OHLCV, indikator | Paragraf naratif (maksimal 3 kalimat) |
+| **Bullish/Bearish Researcher** | Seluruh laporan Tim Analis | Paragraf naratif (maksimal 3 kalimat) |
+| **Research Facilitator** | Argumen debat kedua Researcher | Paragraf naratif (maksimal 3 kalimat) |
+| **Risk Analysts (Aggressive/Conservative)** | Kesimpulan riset | Paragraf naratif (maksimal 3 kalimat) |
+| **Risk Facilitator** | Penilaian kedua Risk Analyst | Paragraf naratif (maksimal 3 kalimat) |
+| **Portfolio Manager** | Ringkasan risiko + kondisi portofolio | Paragraf naratif (maksimal 3 kalimat) |
+| **Trading Agent** | Keputusan Portfolio Manager | JSON: `{"action": "BUY/HOLD/SELL", "quantity": ..., "confidence": ...}` |
+
+*Catatan: Seluruh agen (kecuali Trading Agent) diprogram dengan sangat ketat (melalui system prompt) untuk menghasilkan ringkasan berbasis teks polos (plain text) tanpa elemen markdown, untuk menjamin estetika logging yang bersih di terminal.*
 
 ### 4.4 Mekanisme Debat Antar-Agen
 
@@ -373,14 +371,14 @@ Hasilkan laporan dalam format JSON terstruktur:
 
 #### Alur Eksekusi Sistem
 
-```
+```text
 [Input: Ticker, Tanggal, Model LLM]
          │
          ▼
 ┌────────────────────────────────────────────┐
 │ TIM ANALIS (4 agen, eksekusi paralel)      │
 │ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
-│ │Fundamental│ │Sentimen  │ │Berita    │ │Teknikal  │ │
+│ │Fundamntl │ │Sentimen  │ │Macro     │ │Teknikal  │ │
 │ └─────┬────┘ └─────┬────┘ └─────┬────┘ └─────┬────┘ │
 │       └──────┬─────┴─────┬──────┘             │      │
 │              ▼           ▼                    ▼      │
@@ -388,40 +386,40 @@ Hasilkan laporan dalam format JSON terstruktur:
 └────────────────────────┬───────────────────────────────┘
                          ▼
 ┌────────────────────────────────────────────┐
-│ TIM PENELITI (Debat n putaran)             │
+│ TIM PENELITI (Debat)                       │
 │ ┌──────────┐    ┌──────────┐               │
 │ │ Bullish  │◄──▶│ Bearish  │               │
 │ └─────┬────┘    └─────┬────┘               │
 │       └──────┬────────┘                     │
 │              ▼                              │
-│   [Fasilitator Debat Riset]                │
+│   [Research Facilitator]                   │
 │              ▼                              │
 │   [Global State: Ringkasan Investasi]      │
 └────────────────────────┬───────────────────┘
                          ▼
 ┌────────────────────────────────────────────┐
-│ TRADER (1 agen)                            │
-│ [Usulan: BUY/HOLD/SELL + rationale]        │
-└────────────────────────┬───────────────────┘
-                         ▼
-┌────────────────────────────────────────────┐
-│ TIM MANAJEMEN RISIKO (Debat n putaran)     │
-│ ┌──────┐  ┌──────┐  ┌──────┐              │
-│ │Risky │◄▶│Netral│◄▶│ Safe │              │
-│ └──┬───┘  └──┬───┘  └──┬───┘              │
-│    └────┬────┴────┬────┘                   │
-│         ▼         ▼                        │
-│   [Fasilitator Debat Risiko]               │
+│ TIM MANAJEMEN RISIKO (Debat)               │
+│ ┌──────────┐    ┌──────────┐               │
+│ │Aggressive│◄──▶│Consrvtive│               │
+│ └─────┬────┘    └─────┬────┘               │
+│       └──────┬────────┘                     │
+│              ▼                              │
+│   [Risk Facilitator]                       │
 │              ▼                              │
 │   [Global State: Rekomendasi Risiko]       │
 └────────────────────────┬───────────────────┘
                          ▼
 ┌────────────────────────────────────────────┐
 │ PORTFOLIO MANAGER (1 agen)                 │
-│ [Keputusan Final + Laporan]                │
+│ [Keputusan Strategis Final Portofolio]     │
 └────────────────────────┬───────────────────┘
                          ▼
-                    [OUTPUT]
+┌────────────────────────────────────────────┐
+│ TRADING AGENT (1 agen)                     │
+│ [Order Eksekusi Kuantitatif JSON]          │
+└────────────────────────┬───────────────────┘
+                         ▼
+                    [OUTPUT TABEL & LOG]
 ```
 
 #### Antarmuka Pengguna (Streamlit)
@@ -432,72 +430,40 @@ Hasilkan laporan dalam format JSON terstruktur:
 
 ### 4.9 Struktur Direktori Proyek
 
-```
+```text
 skripsi-multiagent-saham/
 │
 ├── config/
-│   ├── prompts/                    # System prompts untuk setiap agen
-│   │   ├── fundamental_analyst.md
-│   │   ├── sentiment_analyst.md
-│   │   ├── news_analyst.md
-│   │   ├── technical_analyst.md
-│   │   ├── bullish_researcher.md
-│   │   ├── bearish_researcher.md
-│   │   ├── research_facilitator.md
-│   │   ├── trader.md
-│   │   ├── risky_manager.md
-│   │   ├── neutral_manager.md
-│   │   ├── safe_manager.md
-│   │   ├── risk_facilitator.md
-│   │   └── portfolio_manager.md
+│   ├── prompts/                    # System prompts untuk setiap tim agen
+│   │   ├── analyst_prompts.py
+│   │   ├── research_prompts.py
+│   │   ├── risk_prompts.py
+│   │   └── execution_prompts.py
 │   ├── llm_config.py               # Konfigurasi model LLM (Ollama/Gemini/Groq)
 │   ├── data_sources.py             # Konfigurasi URL RSS, ticker, dll.
 │   └── glossary.py                 # Glosarium keuangan Indonesia untuk prompt
 │
 ├── data/
-│   ├── raw/                        # Data mentah hasil fetch API
-│   ├── processed/                  # Data yang sudah dibersihkan
-│   ├── cache/                      # Cache per tanggal (pencegahan look-ahead bias)
-│   │   └── {ticker}/{date}/        # Struktur: BBCA.JK/2024-01-15/
-│   └── fundamentals/               # Data fundamental manual (CSV)
-│       ├── banking_ratios.csv      # NPL, CAR, NIM per emiten per kuartal
-│       └── bi_rate.csv             # Historis BI-7DRR
+│   └── cache/                      # Centralized Cache per ticker (in-memory slicing)
+│       └── {ticker}/               # Struktur: BBCA.JK/master_ohlcv.csv
 │
-├── agents/
-│   ├── analyst/
-│   │   ├── fundamental_analyst.py
-│   │   ├── sentiment_analyst.py
-│   │   ├── news_analyst.py
-│   │   └── technical_analyst.py
-│   ├── researcher/
-│   │   ├── bullish_researcher.py
-│   │   ├── bearish_researcher.py
-│   │   └── research_facilitator.py # Fasilitator debat peneliti
-│   ├── trader/
-│   │   └── trader_agent.py
-│   ├── risk_management/
-│   │   ├── risky_agent.py
-│   │   ├── neutral_agent.py
-│   │   ├── safe_agent.py
-│   │   └── risk_facilitator.py     # Fasilitator debat risiko
-│   └── portfolio_manager/
-│       └── portfolio_manager.py
+├── agents/                         # Definisi Agen per Tim
+│   ├── analysts.py                 # Fundamental, Sentiment, Macro, Technical
+│   ├── researchers.py              # Bullish, Bearish, Facilitator
+│   ├── risk_management.py          # Aggressive, Conservative, Facilitator
+│   └── execution.py                # Portfolio Manager, Trading Agent
 │
 ├── orchestration/
-│   ├── graph_builder.py             # Definisi workflow LangGraph (StateGraph)
-│   ├── state_schema.py              # TradingState TypedDict
-│   └── debate_engine.py             # Mekanisme debat generik (reusable)
+│   ├── graph.py                    # Definisi workflow LangGraph (StateGraph)
+│   ├── state.py                    # TradingState TypedDict
+│   └── backtester.py               # Engine backtesting dan logging terminal
 │
 ├── tools/
-│   ├── data_fetcher.py              # Wrapper yfinance untuk OHLCV + fundamental
-│   ├── indicator_calculator.py      # Kalkulasi indikator teknikal (stockstats)
-│   ├── news_fetcher.py              # RSS feed parser (Google News, Kontan, CNBC ID)
-│   ├── fundamental_loader.py        # Loader data fundamental perbankan (CSV)
-│   └── cache_manager.py             # Manajemen cache data per tanggal
+│   ├── data_fetcher.py             # Wrapper yfinance untuk OHLCV + fundamental
+│   ├── cache_manager.py            # Manajemen cache (master file)
+│   └── utils.py                    # Helper fungsionalitas
 │
-├── ui/
-│   ├── app_streamlit.py             # Antarmuka pengguna Streamlit
-│   └── cli_interface.py             # CLI interaktif alternatif
+├── main.py                         # Entry point eksekusi sistem (CLI)
 │
 ├── backtesting/
 │   ├── simulator.py                 # Integrasi Backtrader
@@ -513,6 +479,13 @@ skripsi-multiagent-saham/
 ├── .env.example                     # Template API keys
 └── README.md
 ```
+
+### 4.10 Eksplainabilitas & Logging Terminal Akademis
+
+Untuk mendukung transparansi riset skripsi, sistem mengadopsi mekanisme **Explainable AI** yang divisualisasikan langsung di antarmuka *terminal*:
+1. **Pembersihan Truncation**: Tidak ada limitasi jumlah karakter pada log keluaran agar logika agen (representasi utuh maksimal 3 kalimat naratif) bisa diakses dan didokumentasikan tanpa pemenggalan.
+2. **Eksekusi Sekuensial**: Meskipun node Analis dieksekusi secara paralel di *background*, orkestrasi log diatur agar dicetak secara linear (sekuensial) berdasarkan *flowchart* (Analis → Peneliti → Risiko → PM → Trading), mempermudah pelacakan *chain of thought*.
+3. **Tabular Visualization**: Setiap akhir siklus harian, sistem otomatis menghasilkan tabel matriks konsensus menggunakan modul `tabulate` yang merangkum keseluruhan strategi Buy/Sell/Hold setiap 12 agen secara *grid* akademis.
 
 ---
 
@@ -536,7 +509,7 @@ Untuk menjawab rumusan masalah kedua (kontribusi mekanisme debat), dilakukan *ab
 
 | Konfigurasi | Deskripsi | Jumlah Agen | Tujuan |
 |-------------|-----------|-------------|--------|
-| **Full MAS** | Sistem lengkap: 4 Analis + 2 Researcher + Fasilitator + Trader + 3 Risk Manager + Fasilitator + Portfolio Manager | 13 | Baseline utama; sistem yang diusulkan |
+| **Full MAS** | Sistem lengkap: 4 Analis + 2 Researcher + Fasilitator + Trading Agent + 2 Risk Analyst + Fasilitator + Portfolio Manager | 12 | Baseline utama; sistem yang diusulkan |
 | **MAS tanpa Debat** | 4 Analis + 1 Researcher (gabungan) + Trader + 1 Risk Manager (gabungan) + Portfolio Manager | 8 | Mengukur kontribusi spesifik mekanisme debat |
 | **Single Agent** | 1 agen LLM menerima seluruh data dan menghasilkan keputusan langsung (mengadopsi pendekatan FinMem [5] tanpa layered memory) | 1 | Mengukur kontribusi arsitektur multi-agen secara keseluruhan |
 
@@ -603,7 +576,7 @@ Selain evaluasi kuantitatif, dilakukan:
 
 1. **Analisis kualitatif eksplainabilitas:** Menelaah log penalaran (*reasoning trace*) pada studi kasus penting (misalnya saat pengumuman BI-7DRR atau rilis laporan keuangan kuartalan emiten) untuk menilai kualitas kolaborasi antar-agen.
 
-2. **Analisis dampak keterbatasan data:** Membandingkan kualitas laporan agen Sentimen dan agen Berita pada konteks Indonesia (data terbatas) dengan ekspektasi pada konteks AS (data melimpah), untuk mendokumentasikan dampak *data gap* terhadap kualitas keputusan.
+2. **Analisis dampak keterbatasan data:** Membandingkan kualitas laporan agen Sentimen dan agen Macro pada konteks Indonesia (data terbatas) dengan ekspektasi pada konteks AS (data melimpah), untuk mendokumentasikan dampak *data gap* terhadap kualitas keputusan.
 
 ### 5.7 Visualisasi Hasil yang Direncanakan
 
@@ -620,7 +593,7 @@ Selain evaluasi kuantitatif, dilakukan:
 | Fase | Durasi | Aktivitas Utama |
 |------|--------|-----------------|
 | **Fase 1: Persiapan** | 2–3 minggu | Konfigurasi environment (Python, LangGraph, Ollama, Backtrader); implementasi *tools* data fetcher (yfinance, RSS parser); kompilasi data fundamental manual; pengumpulan dan caching data |
-| **Fase 2: Implementasi Agen** | 3–4 minggu | Implementasi 13 agen (4 analis + 3 researcher + 1 trader + 4 risk mgmt + 1 portfolio manager); desain *system prompt*; mekanisme debat |
+| **Fase 2: Implementasi Agen** | 3–4 minggu | Implementasi 12 agen (4 analis + 3 researcher + 1 trader + 3 risk mgmt + 1 portfolio manager); desain *system prompt*; mekanisme debat |
 | **Fase 3: Orkestrasi & UI** | 2 minggu | Integrasi LangGraph *workflow*; antarmuka Streamlit + CLI; *rate limiter* |
 | **Fase 4: Backtesting** | 2–3 minggu | Simulasi pada 3 emiten × 3 konfigurasi *ablation*; perhitungan metrik; perbandingan baseline |
 | **Fase 5: Analisis & Laporan** | 2–3 minggu | Analisis kuantitatif dan kualitatif; visualisasi; penyusunan laporan skripsi |

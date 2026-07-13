@@ -3,6 +3,28 @@ from config.llm_config import get_llm
 from langchain_core.messages import HumanMessage, SystemMessage
 import config.prompts.analyst_prompts as prompts
 import json
+import re
+
+
+def _extract_strategy(text: str) -> str:
+    """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
+    if not text:
+        return "HOLD"
+    upper = text.upper()
+    buy_count = len(re.findall(r'\bBUY\b', upper))
+    sell_count = len(re.findall(r'\bSELL\b', upper))
+    hold_count = len(re.findall(r'\bHOLD\b', upper))
+    
+    counts = {"BUY": buy_count, "SELL": sell_count, "HOLD": hold_count}
+    return max(counts, key=counts.get) if max(counts.values()) > 0 else "HOLD"
+
+
+def _clean_text(text: str) -> str:
+    """Clean text for log display without truncating."""
+    if not text:
+        return "(kosong)"
+    return text.replace('\n', ' ').strip()
+
 
 def _run_analyst_node(state: TradingState, role_name: str, data_key: str, prompt_template: str) -> dict:
     """Helper to run a generic analyst node."""
@@ -30,6 +52,8 @@ def _run_analyst_node(state: TradingState, role_name: str, data_key: str, prompt
     except Exception as e:
         print(f"[{role_name}] LLM Error: {e}")
         report = f"Error generating report: {e}"
+
+    # We no longer print here to enforce sequential printing in backtester.py
         
     return {"analyst_reports": {role_name.lower(): report}}
 
@@ -45,4 +69,3 @@ def sentiment_analyst(state: TradingState):
 
 def macro_analyst(state: TradingState):
     return _run_analyst_node(state, "Macro", "news", prompts.MACRO_ANALYST_PROMPT)
-

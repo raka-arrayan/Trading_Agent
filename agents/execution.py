@@ -6,6 +6,27 @@ import config.prompts.execution_prompts as prompts
 import json
 import re
 
+
+def _extract_strategy(text: str) -> str:
+    """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
+    if not text:
+        return "HOLD"
+    upper = text.upper()
+    buy_count = len(re.findall(r'\bBUY\b', upper))
+    sell_count = len(re.findall(r'\bSELL\b', upper))
+    hold_count = len(re.findall(r'\bHOLD\b', upper))
+    
+    counts = {"BUY": buy_count, "SELL": sell_count, "HOLD": hold_count}
+    return max(counts, key=counts.get) if max(counts.values()) > 0 else "HOLD"
+
+
+def _clean_text(text: str) -> str:
+    """Clean text for log display without truncating."""
+    if not text:
+        return "(kosong)"
+    return text.replace('\n', ' ').strip()
+
+
 def portfolio_manager(state: TradingState):
     print("--- Running Portfolio Manager ---")
     llm = get_llm("analyst", "ollama")
@@ -23,6 +44,8 @@ def portfolio_manager(state: TradingState):
     except Exception as e:
         print(f"[PM] LLM Error: {e}")
         decision = f"Error generating decision: {e}"
+
+    # Print moved to backtester.py
         
     new_portfolio = portfolio.copy() if portfolio else {}
     new_portfolio["recommendation"] = decision
@@ -53,5 +76,5 @@ def trading_agent(state: TradingState):
     except Exception as e:
         print(f"[Trader] LLM/Parse Error: {e}")
         decision = {"action": "HOLD", "quantity": 0, "confidence": 0.0, "raw_error": str(e)}
-        
+
     return {"trading_decision": decision}
