@@ -1,5 +1,5 @@
 # SISTEM DOKUMENTASI
-## Multi-Agent System untuk Sistem Pendukung Keputusan Investasi Saham pada Sektor Perbankan di IHSG
+## Penerapan Sistem Pendukung Keputusan Investasi Saham Perbankan Berbasis Explainable AI Menggunakan Arsitektur Multi-Agent
 
 > Dokumen ini merupakan dokumentasi teknis dan akademis menyeluruh dari proyek Multi-Agent System (MAS) yang dikembangkan sebagai bagian dari penelitian skripsi. Seluruh isi dokumen disusun secara sistematis dan konsisten dengan desain sistem yang telah diimplementasikan.
 
@@ -1004,15 +1004,99 @@ Prinsip desain:
 ## 5. Daftar Pustaka
 
 [1] Y. Xiao, E. Sun, D. Luo, and W. Wang, "TradingAgents: Multi-Agents LLM Financial Trading Framework," *arXiv preprint arXiv:2412.20138v7*, Jun. 2025. [Online]. Available: https://arxiv.org/abs/2412.20138
+```
+Kutip di Bab 1, 2, & 3. Jurnal acuan utama (primary reference) dari seluruh arsitektur
+sistem ini. Paper ini memperkenalkan kerangka kerja multi-agent yang mensimulasikan
+hierarki firma investasi profesional: Tim Analis, Tim Peneliti dengan mekanisme debat
+Bull vs Bear, Tim Risiko, dan Tim Eksekusi. Seluruh desain 12 agen dalam sistem
+penelitian ini merupakan replikasi dan adaptasi dari arsitektur TradingAgents ke konteks
+pasar saham Indonesia (IHSG).
+```
 
-[2] S. Hong, M. Zhuge, J. Chen, X. Zheng, Y. Cheng, C. Zhang, J. Wang, Z. Wang, S. K. S. Yau, Z. Lin, L. Zhou, C. Ran, L. Xiao, C. Wu, and J. Schmidhuber, "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework," *arXiv preprint arXiv:2308.00352*, 2024. [Online]. Available: https://arxiv.org/abs/2308.00352
+[2] S. Hong, M. Zhuge, J. Chen, X. Zheng, Y. Cheng, C. Zhang, J. Wang, Z. Wang, S. K. S. Yau, Z. Lin, L. Zhou, C. Ran, L. Xiao, C. Wu, and J. Schmidhuber, "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework," *Proc. ICLR 2024 (Oral)*, 2024. [Online]. Available: https://arxiv.org/abs/2308.00352
+```
+Kutip di Bab 2 & 3. MetaGPT memperkenalkan paradigma komunikasi publish-subscribe
+pada sistem multi-agen, di mana setiap agen membaca langsung dari global shared state
+alih-alih menerima pesan berantai dari agen sebelumnya. Prinsip ini diadopsi secara
+eksplisit dalam desain TradingState pada sistem penelitian ini untuk mencegah
+telephone effect (degradasi informasi antar-agen).
+```
 
 [3] Y. Yu, Z. Yao, H. Li, Z. Deng, Y. Cao, Z. Chen, J. W. Suchow, R. Liu, Z. Cui, and D. Zhang, "FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making," *Proc. NeurIPS 2024*, 2024. [Online]. Available: https://arxiv.org/abs/2407.06567
+```
+Kutip di Bab 2. FinCon memperkenalkan hierarki manager-analyst pada sistem multi-agen
+keuangan dengan mekanisme Conceptual Verbal Reinforcement (CVRF), di mana agen dapat
+mengkritik dan memperbarui keyakinan investasinya secara dinamis. Paper ini menjadi
+bukti bahwa arsitektur multi-agen menghasilkan keputusan investasi yang lebih baik
+dibanding agen tunggal — mendukung premis dasar penelitian ini.
+```
 
-[4] S. Wu, O. Irsoy, S. Lu, V. Dabravolski, M. Dredze, S. Gehrmann, P. Kambadur, D. Rosenberg, and G. Mann, "BloombergGPT: A Large Language Model for Finance," *arXiv preprint arXiv:2303.17564*, 2023. [Online]. Available: https://arxiv.org/abs/2303.17564
+[4] Y. Du, S. Li, A. Torralba, J. B. Tenenbaum, and I. Mordatch, "Improving Factuality and Reasoning in Language Models through Multiagent Debate," *Proc. ICML 2024*, 2024. [Online]. Available: https://arxiv.org/abs/2305.14325
+```
+Kutip di Bab 2 & 3. Paper fondasi yang membuktikan secara empiris bahwa mekanisme
+debat antar beberapa agen LLM secara signifikan mengurangi halusinasi dan meningkatkan
+akurasi penalaran. Temuan ini menjadi landasan teori utama mengapa sistem penelitian
+ini mengimplementasikan dua lapisan debat adversarial (Bullish vs Bearish, kemudian
+Aggressive Risk vs Conservative Risk) alih-alih menggunakan satu agen tunggal.
+```
 
-[5] Y. Yu, H. Li, Z. Chen, Y. Jiang, Y. Li, D. Zhang, R. Liu, J. W. Suchow, and K. Khashanah, "FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design," *arXiv preprint arXiv:2311.13743*, 2023. [Online]. Available: https://arxiv.org/abs/2311.13743
+[5] G. Irving, P. Christiano, and D. Amodei, "AI Safety via Debate," *arXiv preprint arXiv:1805.00899*, 2018. [Online]. Available: https://arxiv.org/abs/1805.00899
+```
+Kutip di Bab 2. Paper teori dari DeepMind yang mengusulkan paradigma AI Safety via
+Debate — dua agen yang saling berlawanan memperdebatkan sebuah pertanyaan di hadapan
+agen juri/fasilitator. Konsep ini menjadi fondasi filosofis bagi desain Research
+Facilitator dan Risk Facilitator dalam sistem penelitian ini, di mana kedua fasilitator
+berperan sebagai juri yang menimbang argumen pro dan kontra secara objektif.
+```
+
+[6] H. Ding, Y. Li, J. Wang, H. Chen, D. Guo, and Y. Zhang, "Large Language Model Agent in Financial Trading: A Survey," *arXiv preprint arXiv:2408.06361v2*, Mar. 2026. [Online]. Available: https://arxiv.org/abs/2408.06361
+```
+Kutip di Bab 2. Survey terbaru yang mengkategorikan agen trading LLM menjadi empat
+jenis: news-driven, reflection-driven, debate-driven, dan RL-driven. Sistem penelitian
+ini termasuk kategori debate-driven — kutip referensi ini untuk memposisikan penelitian
+dalam tren riset global dan menunjukkan bahwa pendekatan debat multi-agen adalah salah
+satu arah penelitian yang sedang aktif dikembangkan.
+```
+
+[7] P. Nguyen and T. Pham, "Toward Reliable Evaluation of LLM-Based Financial Multi-Agent Systems: Taxonomy, Coordination Primacy, and Cost Awareness," *arXiv preprint arXiv:2603.27539*, Mar. 2026. [Online]. Available: https://arxiv.org/abs/2603.27539
+```
+Kutip di Bab 3 & 4. Paper ini mengusulkan Coordination Primacy Hypothesis — bahwa
+desain koordinasi antar-agen lebih penting dari ukuran model LLM itu sendiri. Temuan
+ini mendukung argumen penelitian ini yang menggunakan model ringan (Gemini Flash Lite)
+namun berfokus pada desain mekanisme debat adversarial. Paper ini juga membahas 5
+kesalahan evaluasi backtesting (look-ahead bias, transaction cost neglect, survivorship
+bias) yang relevan dengan batasan sistem penelitian ini.
+```
+
+[8] K. Miyazaki, T. Kawahara, S. J. Roberts, and S. Zohren, "Toward Expert Investment Teams: A Multi-Agent LLM System with Fine-Grained Trading Tasks," *arXiv preprint arXiv:2602.23330*, Feb. 2026. [Online]. Available: https://arxiv.org/abs/2602.23330
+```
+Kutip di Bab 3. Paper ini membuktikan secara empiris bahwa dekomposisi tugas
+fine-grained (setiap agen memiliki tugas spesifik yang terdefinisi dengan jelas)
+menghasilkan risk-adjusted return yang lebih baik dibanding pendekatan coarse-grained
+(satu agen melakukan semua tugas). Desain ini persis mencerminkan arsitektur sistem
+penelitian ini: Fundamental ≠ Sentiment ≠ Macro ≠ Teknikal, masing-masing adalah agen
+terpisah dengan system prompt terspesialisasi.
+```
+
+[9] T. Cai, G. Li, N. Han, C. Huang, Z. Wang, et al., "FinDebate: A Multi-Agent Financial Analysis Framework with Safe Debate Protocol and Financial RAG," *Proc. 10th Workshop on Financial Technology and Natural Language Processing (FinNLP@EMNLP 2025)*, Nov. 2025. [Online]. Available: https://arxiv.org/abs/2509.17395
+```
+Kutip di Bab 2 & 3. Paper ini memperkenalkan Safe Debate Protocol di mana 5 agen
+keuangan terspesialisasi saling menantang kesimpulan satu sama lain untuk mengeliminasi
+overconfidence dan halusinasi. Mekanisme ini sangat mirip dengan desain dua lapisan
+debat dalam sistem penelitian ini (Bullish vs Bearish, kemudian Aggressive vs
+Conservative). Kutip sebagai bukti bahwa mekanisme debat adversarial adalah pendekatan
+yang telah divalidasi oleh komunitas riset NLP internasional.
+```
+
+[10] A. Jadhav and V. Mirza, "Large Language Models in Equity Markets: Applications, Techniques, and Insights," *Frontiers in Artificial Intelligence*, vol. 8, Art. 1608365, Aug. 2025. [Online]. Available: https://doi.org/10.3389/frai.2025.1608365
+```
+Kutip di Bab 2. Survey sistematis terhadap 84 studi yang memetakan seluruh teknik LLM
+di pasar ekuitas, meliputi prompting, multi-agent, dan reinforcement learning. Jurnal
+Frontiers in AI adalah open-access dan peer-reviewed — menjadikannya referensi yang
+lebih kuat dibanding arXiv preprint bagi dosen penguji yang menghargai jurnal
+terindeks Scopus/Web of Science.
+```
 
 ---
 
-> **Catatan:** Dokumentasi ini disusun berdasarkan implementasi aktual kode sumber proyek dan proposal skripsi revisi. Seluruh referensi ke file, fungsi, dan variabel telah diverifikasi terhadap kode yang berjalan pada saat dokumentasi ini ditulis (Juli 2026).
+> **Catatan:** Dokumentasi ini disusun berdasarkan implementasi aktual kode sumber proyek dan proposal skripsi revisi. Seluruh referensi ke file, fungsi, dan variabel telah diverifikasi terhadap kode yang berjalan pada saat dokumentasi ini ditulis (Juli 2026). Seluruh daftar pustaka telah diverifikasi keberadaannya pada Agustus 2026.

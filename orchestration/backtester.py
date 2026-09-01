@@ -136,11 +136,13 @@ class Backtester:
         return self.indicator_calc.calculate_indicators(df_slice, date_str)
 
     @staticmethod
-    def _extract_strategy_from_text(text: str) -> str:
+    def _extract_strategy_from_text(text) -> str:
         """Extract dominant BUY/SELL/HOLD from text by keyword frequency."""
         if not text:
             return "HOLD"
-        upper = text.upper()
+        if isinstance(text, list):
+            text = " ".join([str(x) for x in text])
+        upper = str(text).upper()
         buy_count = len(re.findall(r'\bBUY\b', upper))
         sell_count = len(re.findall(r'\bSELL\b', upper))
         hold_count = len(re.findall(r'\bHOLD\b', upper))
@@ -167,7 +169,9 @@ class Backtester:
         
         def clean_text(text):
             if not text: return "(kosong)"
-            return text.replace('\n', ' ').strip()
+            if isinstance(text, list):
+                text = " ".join([str(x) for x in text])
+            return str(text).replace('\n', ' ').strip()
             
         print(f"\n============================================================")
         print(f"  ANALISIS HARIAN: {date}")
@@ -333,19 +337,34 @@ class Backtester:
                 "trading_decision": {}
             }
             
-            # 3. Execute LangGraph (all agents)
-            try:
-                final_state = self.graph.invoke(state)
-                decision = final_state.get("trading_decision", {})
-                
-                # 4. Print consensus summary (Explainable AI)
-                self._print_consensus_summary(final_state, date)
-                
-                # 5. Execute Trade
-                self._execute_trade(decision, current_price, date)
-                
-            except Exception as e:
-                print(f"  Error during graph execution on {date}: {e}")
+            # 3. Weekly Trading Logic: Only run LLM on Friday
+            # Monday=0, ..., Friday=4
+            import pandas as pd
+            current_dt = pd.to_datetime(date)
+            is_friday = current_dt.dayofweek == 4
+            
+            if is_friday:
+                try:
+                    final_state = self.graph.invoke(state)
+                    decision = final_state.get("trading_decision", {})
+                    
+                    # 4. Print consensus summary (Explainable AI)
+                    self._print_consensus_summary(final_state, date)
+                    
+                    # 5. Execute Trade
+                    self._execute_trade(decision, current_price, date)
+                    
+                    # Jeda waktu 60 detik khusus hari Jumat agar Google tidak memblokir
+                    import time
+                    print("  [Rate Limit Guard] Sleeping for 60s to reset Gemini free quota...")
+                    time.sleep(60)
+                    
+                except Exception as e:
+                    import traceback
+                    print(f"  Error during graph execution on {date}: {e}")
+                    traceback.print_exc()
+            else:
+                print("  [Weekly Strategy] Skipping LLM execution (Not Friday). Action: HOLD")
                 
             # 6. Update NAVs
             current_nav = self.current_cash + (self.holdings * current_price)

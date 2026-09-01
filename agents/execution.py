@@ -11,7 +11,7 @@ def _extract_strategy(text: str) -> str:
     """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
     if not text:
         return "HOLD"
-    upper = text.upper()
+    upper = str(text).upper()
     buy_count = len(re.findall(r'\bBUY\b', upper))
     sell_count = len(re.findall(r'\bSELL\b', upper))
     hold_count = len(re.findall(r'\bHOLD\b', upper))
@@ -29,7 +29,7 @@ def _clean_text(text: str) -> str:
 
 def portfolio_manager(state: TradingState):
     print("--- Running Portfolio Manager ---")
-    llm = get_llm("analyst", "ollama")
+    llm = get_llm("analyst", "gemini")
     
     res_cons = state.get("research_consensus", "")
     risk_cons = state.get("risk_consensus", "")
@@ -53,7 +53,7 @@ def portfolio_manager(state: TradingState):
 
 def trading_agent(state: TradingState):
     print("--- Running Trading Agent ---")
-    llm = get_llm("analyst", "ollama")
+    llm = get_llm("analyst", "gemini")
     
     pm_rec = state.get("portfolio_status", {}).get("recommendation", "")
     
@@ -63,6 +63,9 @@ def trading_agent(state: TradingState):
     try:
         response = llm.invoke([sys_msg, human_msg])
         content = response.content
+        if isinstance(content, list):
+            content = " ".join([c.get("text", "") if isinstance(c, dict) else str(c) for c in content])
+        
         
         # Use regex to find JSON block if LLM added markdown formatting
         json_match = re.search(r'\{.*\}', content, re.DOTALL)

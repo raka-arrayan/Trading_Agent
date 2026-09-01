@@ -10,7 +10,7 @@ def _extract_strategy(text: str) -> str:
     """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
     if not text:
         return "HOLD"
-    upper = text.upper()
+    upper = str(text).upper()
     buy_count = len(re.findall(r'\bBUY\b', upper))
     sell_count = len(re.findall(r'\bSELL\b', upper))
     hold_count = len(re.findall(r'\bHOLD\b', upper))
@@ -28,7 +28,7 @@ def _clean_text(text: str) -> str:
 
 def conservative_risk_analyst(state: TradingState):
     print("--- Running Conservative Risk Analyst ---")
-    llm = get_llm("researcher", "ollama")
+    llm = get_llm("researcher", "gemini")
     
     consensus = state.get("research_consensus", "")
     
@@ -48,7 +48,7 @@ def conservative_risk_analyst(state: TradingState):
 
 def aggressive_risk_analyst(state: TradingState):
     print("--- Running Aggressive Risk Analyst ---")
-    llm = get_llm("researcher", "ollama")
+    llm = get_llm("researcher", "gemini")
     
     consensus = state.get("research_consensus", "")
     
@@ -68,7 +68,7 @@ def aggressive_risk_analyst(state: TradingState):
 
 def risk_facilitator(state: TradingState):
     print("--- Running Risk Facilitator ---")
-    llm = get_llm("analyst", "ollama")
+    llm = get_llm("analyst", "gemini")
     
     debate = state.get("risk_debate", [])
     consensus = state.get("research_consensus", "")

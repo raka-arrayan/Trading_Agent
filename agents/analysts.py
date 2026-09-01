@@ -10,7 +10,7 @@ def _extract_strategy(text: str) -> str:
     """Extract dominant strategy keyword (BUY/SELL/HOLD) from LLM response text."""
     if not text:
         return "HOLD"
-    upper = text.upper()
+    upper = str(text).upper()
     buy_count = len(re.findall(r'\bBUY\b', upper))
     sell_count = len(re.findall(r'\bSELL\b', upper))
     hold_count = len(re.findall(r'\bHOLD\b', upper))
@@ -29,7 +29,7 @@ def _clean_text(text: str) -> str:
 def _run_analyst_node(state: TradingState, role_name: str, data_key: str, prompt_template: str) -> dict:
     """Helper to run a generic analyst node."""
     print(f"--- Running {role_name} Analyst ---")
-    llm = get_llm("analyst", "ollama")
+    llm = get_llm("analyst", "gemini")
     
     sys_msg = SystemMessage(content=prompt_template)
     

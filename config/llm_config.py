@@ -1,7 +1,10 @@
 import os
+from dotenv import load_dotenv
 from langchain_ollama import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
+
+load_dotenv()
 
 def get_llm(role="analyst", provider="ollama"):
     """
@@ -22,10 +25,13 @@ def get_llm(role="analyst", provider="ollama"):
     elif provider == "gemini":
         api_key = os.environ.get("GOOGLE_API_KEY")
         if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is not set")
+            raise ValueError("GOOGLE_API_KEY environment variable is not set. Please check your .env file.")
+        
+        # LangChain's ChatGoogleGenerativeAI otomatis membaca dari os.environ["GOOGLE_API_KEY"]
         return ChatGoogleGenerativeAI(
-            model="gemini-2.0-flash", # Available in free tier
-            temperature=temperature
+            model="gemini-flash-lite-latest",
+            temperature=temperature,
+            max_retries=5  # Otomatis menunggu jika terkena Rate Limit
         )
     elif provider == "groq":
         api_key = os.environ.get("GROQ_API_KEY")

@@ -4,6 +4,8 @@ stockstats>=0.6.2
 feedparser>=6.0.10
 python-dotenv>=1.0.0
 requests>=2.31.0
+matplotlib>=3.7.0
+mplfinance>=0.12.10
 
 langchain>=0.2.0
 langgraph>=0.1.0
