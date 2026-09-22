@@ -35,7 +35,8 @@ def calculate_metrics(nav_history: list, trades: list, risk_free_rate_annual: fl
     # Excess returns
     excess_returns = daily_returns - daily_rf
     
-    if len(excess_returns) > 0 and np.std(excess_returns) > 0:
+    # Menghindari error pembagian dengan nol (division by zero) jika grafik datar sempurna
+    if len(excess_returns) > 0 and np.std(excess_returns) > 1e-6:
         # Annualized Sharpe Ratio
         sharpe_ratio = np.sqrt(252) * np.mean(excess_returns) / np.std(excess_returns)
     else:

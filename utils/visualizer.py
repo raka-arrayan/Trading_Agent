@@ -48,6 +48,56 @@ def plot_performance(dates: list, mas_nav: list, bh_nav: list, ticker: str, outp
     
     plt.close()
 
+def plot_ablation(df: pd.DataFrame, ticker: str, output_path: str):
+    """
+    Plot perbandingan hasil simulasi (Ablation Study).
+    Menggambar garis untuk MAS 12, MAS 8, MAS 1, B&H, SMA, MACD.
+    """
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    plt.figure(figsize=(14, 7))
+    
+    dates = df['Date']
+    
+    # Warna yang berbeda untuk setiap strategi
+    colors = {
+        'MAS12_NAV': 'blue',
+        'MAS8_NAV': 'orange',
+        'MAS1_NAV': 'red',
+        'BH_NAV': 'gray',
+        'SMA_NAV': 'green',
+        'MACD_NAV': 'purple'
+    }
+    
+    labels = {
+        'MAS12_NAV': 'MAS (12 Agen)',
+        'MAS8_NAV': 'MAS (8 Agen)',
+        'MAS1_NAV': 'MAS (1 Agen)',
+        'BH_NAV': 'Buy & Hold',
+        'SMA_NAV': 'SMA Crossover',
+        'MACD_NAV': 'MACD Signal'
+    }
+    
+    for col in df.columns:
+        if col in colors:
+            plt.plot(dates, df[col], label=labels[col], color=colors[col], linewidth=2 if 'MAS' in col else 1.5, linestyle='-' if 'MAS12' in col else '--')
+
+    plt.title(f"Ablation Study & Benchmark Comparison ({ticker})", fontsize=14, fontweight='bold')
+    plt.xlabel("Date")
+    plt.ylabel("Net Asset Value (IDR)")
+    plt.legend(loc="upper left")
+    plt.grid(True, alpha=0.3)
+    
+    # Rotate x-axis labels
+    if len(dates) > 10:
+        plt.xticks(range(0, len(dates), len(dates)//10), rotation=45)
+    else:
+        plt.xticks(rotation=45)
+        
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300)
+    plt.close()
+
+
 
 def plot_mas_ohlcv(ohlcv_path: str, trades_csv_path: str, ticker: str,
                    output_path: str = "results/candlestick_chart.png",

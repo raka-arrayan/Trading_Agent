@@ -4,7 +4,7 @@ from langchain_ollama import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 
-load_dotenv()
+load_dotenv(override=True)
 
 def get_llm(role="analyst", provider="ollama"):
     """

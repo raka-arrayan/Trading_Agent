@@ -6,21 +6,28 @@ from tools.cache_manager import CacheManager
 from tools.data_fetcher import YFinanceFetcher
 from tools.indicator_calculator import TechnicalIndicatorCalculator
 from tools.news_fetcher import NewsFetcher
-from orchestration.graph import create_trading_graph
+from orchestration.graph import create_trading_graph, create_trading_graph_8_agents, create_trading_graph_1_agent
 
 class Backtester:
-    def __init__(self, ticker: str, start_date: str, end_date: str, initial_capital: float = 100_000_000.0, fee_rate: float = 0.002):
+    def __init__(self, ticker: str, start_date: str, end_date: str, initial_capital: float = 100_000_000.0, fee_rate: float = 0.002, architecture: int = 12):
         self.ticker = ticker
         self.start_date = start_date
         self.end_date = end_date
         self.initial_capital = initial_capital
         self.fee_rate = fee_rate
+        self.architecture = architecture
         
         self.cache_manager = CacheManager(base_dir="data/cache")
         self.data_fetcher = YFinanceFetcher(self.cache_manager)
         self.indicator_calc = TechnicalIndicatorCalculator()
         self.news_fetcher = NewsFetcher(self.cache_manager)
-        self.graph = create_trading_graph()
+        
+        if architecture == 8:
+            self.graph = create_trading_graph_8_agents()
+        elif architecture == 1:
+            self.graph = create_trading_graph_1_agent()
+        else:
+            self.graph = create_trading_graph()
         
         # State tracking
         self.current_cash = initial_capital
