@@ -40,14 +40,28 @@ class NewsFetcher:
             })
         return news_list
 
+    # Kata kunci tidak relevan yang sering muncul pada artikel edukasi, promosi, atau insiden non-finansial
+    IRRELEVANT_KEYWORDS = [
+        "cara beli", "cara investasi", "panduan pemula", "tips pemula", 
+        "belajar saham", "cara daftar", "panduan lengkap", "reksadana pemula",
+        "cara membuka rekening", "pinjaman online", "pinjol", "promo diskon",
+        "perampokan", "pembobolan atm", "gelapkan dana", "teller bank bawa kabur"
+    ]
+
+    def is_valid_headline(self, title: str) -> bool:
+        """Menyaring judul berita untuk membuang berita sampah/clickbait."""
+        if not title or len(title.strip()) < 10:
+            return False
+        title_lower = title.lower()
+        for bad_word in self.IRRELEVANT_KEYWORDS:
+            if bad_word in title_lower:
+                return False
+        return True
+
     def fetch_all_news(self, ticker: str) -> List[Dict]:
         """
         Fetches news related to the ticker and general market news.
-        Saves as master_news.json at the ticker level.
-        
-        Note: RSS feeds typically only provide recent news. For historical backtesting, 
-        this would normally read from a pre-scraped historical database.
-        For the pipeline foundation, we fetch live RSS and save it to the cache.
+        Appends new valid items incrementally to existing master_news.json.
         """
         print(f"  [Fetch] Downloading news for {ticker}...")
         
@@ -63,18 +77,37 @@ class NewsFetcher:
         # 3. Market news from CNBC Indonesia
         cnbc_news = self.fetch_cnbc_indonesia()
         
-        # Combine all
-        all_news = gn_news + macro_news + cnbc_news if 'cnbc_news' in locals() else gn_news + macro_news
+        # Gabungkan semua berita baru yang ditarik
+        all_new_news = gn_news + macro_query_items if 'macro_query_items' in locals() else gn_news + macro_news + cnbc_news
         
-        # Deduplicate by title
+        # Muat berita lama jika sudah ada di cache lokal (agar arsip lama aman)
+        existing_news = []
+        if self.cache_manager.master_file_exists(ticker, "master_news.json"):
+            existing_news = self.cache_manager.load_master_json(ticker, "master_news.json") or []
+
+        # Gabungkan arsip lama dan berita baru, lakukan filter dan deduplikasi
         seen_titles = set()
-        unique_news = []
-        for n in all_news:
-            if n['title'] not in seen_titles:
-                seen_titles.add(n['title'])
-                unique_news.append(n)
-                
-        # Save as master JSON at ticker level
-        self.cache_manager.save_master_json(ticker, "master_news.json", unique_news)
+        merged_news = []
         
-        return unique_news
+        # Prioritaskan arsip lama yang sudah bersih
+        for item in existing_news:
+            if self.is_valid_headline(item.get('title', '')):
+                if item['title'] not in seen_titles:
+                    seen_titles.add(item['title'])
+                    merged_news.append(item)
+                    
+        # Tambahkan berita baru yang lolos filter
+        added_count = 0
+        for item in all_new_news:
+            if self.is_valid_headline(item.get('title', '')):
+                if item['title'] not in seen_titles:
+                    seen_titles.add(item['title'])
+                    merged_news.append(item)
+                    added_count += 1
+                    
+        print(f"  [Filter] {added_count} berita baru ditambahkan. Total koleksi bersih: {len(merged_news)} berita.")
+        
+        # Simpan kembali ke master_news.json di cache
+        self.cache_manager.save_master_json(ticker, "master_news.json", merged_news)
+        
+        return merged_news

@@ -142,6 +142,46 @@ class Backtester:
         
         return self.indicator_calc.calculate_indicators(df_slice, date_str)
 
+    def _slice_news_for_date(self, date_str: str, lookback_days: int = 7) -> list:
+        """
+        Slices master_news to only include articles published up to date_str (inclusive)
+        within the lookback window (default 7 days) to strictly prevent look-ahead bias.
+        """
+        if not self.master_news:
+            return []
+            
+        sim_dt = pd.to_datetime(date_str).tz_localize(None)
+        start_dt = sim_dt - pd.Timedelta(days=lookback_days)
+        
+        valid_news = []
+        for item in self.master_news:
+            pub_str = item.get("published", "")
+            if not pub_str:
+                continue
+            try:
+                art_dt = pd.to_datetime(pub_str, errors='coerce')
+                if art_dt is not None and not pd.isna(art_dt):
+                    art_dt = art_dt.tz_localize(None) if art_dt.tzinfo else art_dt
+                    if start_dt <= art_dt <= sim_dt:
+                        valid_news.append(item)
+            except Exception:
+                continue
+                
+        # Jika dalam jendela 7 hari tidak ada berita, ambil berita terdekat sebelum sim_dt (maks 10 artikel)
+        if not valid_news:
+            for item in self.master_news:
+                try:
+                    art_dt = pd.to_datetime(item.get("published", ""), errors='coerce')
+                    if art_dt is not None and not pd.isna(art_dt):
+                        art_dt = art_dt.tz_localize(None) if art_dt.tzinfo else art_dt
+                        if art_dt <= sim_dt:
+                            valid_news.append(item)
+                except Exception:
+                    continue
+            valid_news = valid_news[:10]
+            
+        return valid_news
+
     @staticmethod
     def _extract_strategy_from_text(text) -> str:
         """Extract dominant BUY/SELL/HOLD from text by keyword frequency."""
@@ -304,11 +344,15 @@ class Backtester:
             # 1. Compute indicators in-memory (sliced up to this date, no look-ahead)
             indicators = self._compute_indicators_for_date(date)
             
+            # 2. Slice news in-memory (published <= date, lookback 7 days, no look-ahead)
+            sliced_news = self._slice_news_for_date(date, lookback_days=7)
+            print(f"  [Time-Slice] {len(sliced_news)} valid news articles passed to agents for {date}.")
+            
             # Build data dict for the graph
             data = {
                 "fundamentals": self.master_fundamentals.get("info", {}) if self.master_fundamentals else {},
                 "indicators": indicators,
-                "news": self.master_news
+                "news": sliced_news
             }
             
             # Get close price from indicators

@@ -1,0 +1,555 @@
+
+=======================================================
+[2026-10-11 10:45:41] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 522 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 522 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 2 berita baru ditambahkan. Total koleksi bersih: 552 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 552 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 0 berita baru ditambahkan. Total koleksi bersih: 298 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 298 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 0 berita baru ditambahkan. Total koleksi bersih: 298 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 298 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 298 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 298 total berita valid tersimpan.
+
+[2026-10-11 10:45:47] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-11 11:00:01] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 523 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 523 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 553 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 553 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 299 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 299 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 1 berita baru ditambahkan. Total koleksi bersih: 299 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 299 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 5 berita baru ditambahkan. Total koleksi bersih: 303 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 303 total berita valid tersimpan.
+
+[2026-10-11 11:00:07] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-12 11:00:06] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 44 berita baru ditambahkan. Total koleksi bersih: 567 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 567 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 42 berita baru ditambahkan. Total koleksi bersih: 595 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 595 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 54 berita baru ditambahkan. Total koleksi bersih: 353 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 353 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 46 berita baru ditambahkan. Total koleksi bersih: 345 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 345 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 44 berita baru ditambahkan. Total koleksi bersih: 347 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 347 total berita valid tersimpan.
+
+[2026-10-12 11:00:12] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-13 11:00:06] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 55 berita baru ditambahkan. Total koleksi bersih: 622 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 622 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 67 berita baru ditambahkan. Total koleksi bersih: 662 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 662 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 70 berita baru ditambahkan. Total koleksi bersih: 423 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 423 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 51 berita baru ditambahkan. Total koleksi bersih: 396 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 396 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 63 berita baru ditambahkan. Total koleksi bersih: 410 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 410 total berita valid tersimpan.
+
+[2026-10-13 11:00:14] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-14 11:01:06] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 55 berita baru ditambahkan. Total koleksi bersih: 677 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 677 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 56 berita baru ditambahkan. Total koleksi bersih: 718 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 718 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 73 berita baru ditambahkan. Total koleksi bersih: 496 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 496 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 58 berita baru ditambahkan. Total koleksi bersih: 454 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 454 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 54 berita baru ditambahkan. Total koleksi bersih: 464 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 464 total berita valid tersimpan.
+
+[2026-10-14 11:01:35] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-15 11:00:05] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 58 berita baru ditambahkan. Total koleksi bersih: 735 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 735 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 74 berita baru ditambahkan. Total koleksi bersih: 792 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 792 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 63 berita baru ditambahkan. Total koleksi bersih: 559 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 559 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 53 berita baru ditambahkan. Total koleksi bersih: 507 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 507 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 54 berita baru ditambahkan. Total koleksi bersih: 518 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 518 total berita valid tersimpan.
+
+[2026-10-15 11:00:16] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-16 11:00:08] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 85 berita baru ditambahkan. Total koleksi bersih: 820 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 820 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 104 berita baru ditambahkan. Total koleksi bersih: 896 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 896 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 88 berita baru ditambahkan. Total koleksi bersih: 647 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 647 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 78 berita baru ditambahkan. Total koleksi bersih: 585 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 585 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 77 berita baru ditambahkan. Total koleksi bersih: 595 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 595 total berita valid tersimpan.
+
+[2026-10-16 11:00:16] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-17 11:00:07] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 90 berita baru ditambahkan. Total koleksi bersih: 910 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 910 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 104 berita baru ditambahkan. Total koleksi bersih: 1000 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1000 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 105 berita baru ditambahkan. Total koleksi bersih: 752 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 752 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 113 berita baru ditambahkan. Total koleksi bersih: 698 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 698 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 75 berita baru ditambahkan. Total koleksi bersih: 670 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 670 total berita valid tersimpan.
+
+[2026-10-17 11:00:14] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-18 11:00:07] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 19 berita baru ditambahkan. Total koleksi bersih: 929 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 929 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 40 berita baru ditambahkan. Total koleksi bersih: 1040 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1040 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 25 berita baru ditambahkan. Total koleksi bersih: 777 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 777 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 20 berita baru ditambahkan. Total koleksi bersih: 718 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 718 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 15 berita baru ditambahkan. Total koleksi bersih: 685 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 685 total berita valid tersimpan.
+
+[2026-10-18 11:00:13] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-19 12:57:00] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 76 berita baru ditambahkan. Total koleksi bersih: 1005 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1005 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 106 berita baru ditambahkan. Total koleksi bersih: 1146 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1146 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 73 berita baru ditambahkan. Total koleksi bersih: 850 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 850 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 57 berita baru ditambahkan. Total koleksi bersih: 775 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 775 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 52 berita baru ditambahkan. Total koleksi bersih: 737 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 737 total berita valid tersimpan.
+
+[2026-10-19 12:57:10] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-20 13:26:04] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 133 berita baru ditambahkan. Total koleksi bersih: 1138 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1138 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 137 berita baru ditambahkan. Total koleksi bersih: 1283 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1283 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 115 berita baru ditambahkan. Total koleksi bersih: 965 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 965 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 98 berita baru ditambahkan. Total koleksi bersih: 873 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 873 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 86 berita baru ditambahkan. Total koleksi bersih: 823 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 823 total berita valid tersimpan.
+
+[2026-10-20 13:26:13] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-21 11:00:08] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 55 berita baru ditambahkan. Total koleksi bersih: 1193 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1193 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 86 berita baru ditambahkan. Total koleksi bersih: 1369 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1369 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 76 berita baru ditambahkan. Total koleksi bersih: 1041 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 1041 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 84 berita baru ditambahkan. Total koleksi bersih: 957 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 957 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 58 berita baru ditambahkan. Total koleksi bersih: 881 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 881 total berita valid tersimpan.
+
+[2026-10-21 11:00:24] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-22 11:24:42] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 107 berita baru ditambahkan. Total koleksi bersih: 1300 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1300 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 101 berita baru ditambahkan. Total koleksi bersih: 1470 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1470 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 94 berita baru ditambahkan. Total koleksi bersih: 1135 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 1135 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 89 berita baru ditambahkan. Total koleksi bersih: 1046 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 1046 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 114 berita baru ditambahkan. Total koleksi bersih: 995 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 995 total berita valid tersimpan.
+
+[2026-10-22 11:24:49] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-23 11:00:07] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 104 berita baru ditambahkan. Total koleksi bersih: 1404 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1404 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 89 berita baru ditambahkan. Total koleksi bersih: 1559 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1559 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 98 berita baru ditambahkan. Total koleksi bersih: 1233 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 1233 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 99 berita baru ditambahkan. Total koleksi bersih: 1145 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 1145 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 80 berita baru ditambahkan. Total koleksi bersih: 1075 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 1075 total berita valid tersimpan.
+
+[2026-10-23 11:00:21] Selesai! Berhasil memproses 5/5 bank.
+
+
+=======================================================
+[2026-10-26 08:41:27] Memulai Koleksi Berita Harian 5 Bank
+=======================================================
+
+--> Memproses BBRI.JK...
+  [Fetch] Downloading news for BBRI.JK...
+  [Filter] 95 berita baru ditambahkan. Total koleksi bersih: 1499 berita.
+  [Cache] Saved master JSON: data\cache\BBRI.JK\master_news.json
+    Berhasil: 1499 total berita valid tersimpan.
+
+--> Memproses BBCA.JK...
+  [Fetch] Downloading news for BBCA.JK...
+  [Filter] 89 berita baru ditambahkan. Total koleksi bersih: 1648 berita.
+  [Cache] Saved master JSON: data\cache\BBCA.JK\master_news.json
+    Berhasil: 1648 total berita valid tersimpan.
+
+--> Memproses BMRI.JK...
+  [Fetch] Downloading news for BMRI.JK...
+  [Filter] 104 berita baru ditambahkan. Total koleksi bersih: 1337 berita.
+  [Cache] Saved master JSON: data\cache\BMRI.JK\master_news.json
+    Berhasil: 1337 total berita valid tersimpan.
+
+--> Memproses BBNI.JK...
+  [Fetch] Downloading news for BBNI.JK...
+  [Filter] 87 berita baru ditambahkan. Total koleksi bersih: 1232 berita.
+  [Cache] Saved master JSON: data\cache\BBNI.JK\master_news.json
+    Berhasil: 1232 total berita valid tersimpan.
+
+--> Memproses BRIS.JK...
+  [Fetch] Downloading news for BRIS.JK...
+  [Filter] 76 berita baru ditambahkan. Total koleksi bersih: 1151 berita.
+  [Cache] Saved master JSON: data\cache\BRIS.JK\master_news.json
+    Berhasil: 1151 total berita valid tersimpan.
+
+[2026-10-26 08:41:35] Selesai! Berhasil memproses 5/5 bank.
+
