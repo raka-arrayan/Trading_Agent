@@ -1,0 +1,9 @@
+# Git & Lingkungan
+.git/
+.env
+__pycache__/
+*.pyc
+
+# Direktori hasil & cache lokal yang tidak perlu dimasukkan ke image Docker build context
+results/
+.ipynb_checkpoints/

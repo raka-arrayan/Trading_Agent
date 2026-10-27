@@ -1,0 +1,23 @@
+services:
+  news-collector:
+    build: .
+    container_name: trading_news_collector
+    environment:
+      - TZ=Asia/Jakarta
+    volumes:
+      - ./data:/app/data
+      - ./scripts:/app/scripts
+    command: python scripts/daily_news_collector.py
+
+  backtest:
+    build: .
+    container_name: trading_backtest
+    environment:
+      - TZ=Asia/Jakarta
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+    env_file:
+      - .env
+    # Jalankan on-demand, contoh: docker compose run --rm backtest python main.py --mode backtest --ticker BBRI.JK --start 2026-04-01 --end 2026-07-31
+    command: python main.py --help
