@@ -10,6 +10,7 @@ Mengumpulkan berita harian untuk 5 bank terkemuka Indonesia:
 Fitur:
 - Otomatis membuat folder cache jika belum ada
 - Menyaring kata kunci tidak relevan (clickbait, edukasi pemula, dll)
+- Membersihkan format deskripsi berita (menghapus HTML gambar & boilerplate)
 - Menggabungkan berita baru dengan arsip lama secara inkremental tanpa duplikasi
 """
 
@@ -54,6 +55,7 @@ def main():
             
     finish_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n[{finish_str}] Selesai! Berhasil memproses {success_count}/{len(TARGET_TICKERS)} bank.\n")
+
 
 if __name__ == "__main__":
     main()

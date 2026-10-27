@@ -1,6 +1,53 @@
 import feedparser
 import urllib.parse
+import re
 from typing import List, Dict
+from bs4 import BeautifulSoup
+
+
+def clean_news_description(raw_desc: str, title: str = "") -> str:
+    """
+    Membersihkan deskripsi berita:
+    1. Jika mengandung boilerplate/slogan Google News -> kosongkan ("").
+    2. Jika mengandung tag HTML (seperti <img> dari CNBC/Detik) -> ambil teks aslinya saja.
+    3. Jika deskripsi hanya mengulang judul -> kosongkan ("").
+    4. Hapus spasi berlebih.
+    """
+    if not raw_desc or not isinstance(raw_desc, str):
+        return ""
+    
+    desc_stripped = raw_desc.strip()
+    if not desc_stripped:
+        return ""
+    
+    # 1. Cek boilerplate Google News
+    if "comprehensive, up-to-date news coverage" in desc_stripped.lower():
+        return ""
+    
+    # 2. Bersihkan tag HTML
+    if "<" in desc_stripped and ">" in desc_stripped:
+        soup = BeautifulSoup(desc_stripped, "html.parser")
+        cleaned_text = soup.get_text(" ", strip=True)
+    else:
+        cleaned_text = desc_stripped
+        
+    cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
+    
+    # 3. Cek kembali setelah tag dibersihkan
+    if "comprehensive, up-to-date news coverage" in cleaned_text.lower():
+        return ""
+        
+    # 4. Jika deskripsi hanya mengulang judul
+    if title:
+        norm_title = re.sub(r"\s+", " ", title).strip().lower()
+        norm_desc = cleaned_text.lower()
+        if norm_desc == norm_title:
+            return ""
+        if norm_desc.startswith(norm_title) and len(norm_desc) - len(norm_title) < 40:
+            return ""
+
+    return cleaned_text
+
 
 class NewsFetcher:
     """
@@ -18,11 +65,14 @@ class NewsFetcher:
         feed = feedparser.parse(url)
         news_list = []
         for entry in feed.entries:
+            title = entry.title
+            raw_desc = entry.get("summary") or entry.get("description") or ""
             news_list.append({
-                "title": entry.title,
+                "title": title,
                 "link": entry.link,
                 "published": entry.get("published", ""),
-                "source": entry.get("source", {}).get("title", "Google News") if isinstance(entry.get("source"), dict) else "Google News"
+                "source": entry.get("source", {}).get("title", "Google News") if isinstance(entry.get("source"), dict) else "Google News",
+                "description": clean_news_description(raw_desc, title)
             })
         return news_list
         
@@ -32,11 +82,14 @@ class NewsFetcher:
         feed = feedparser.parse(url)
         news_list = []
         for entry in feed.entries:
+            title = entry.title
+            raw_desc = entry.get("summary") or entry.get("description") or ""
             news_list.append({
-                "title": entry.title,
+                "title": title,
                 "link": entry.link,
                 "published": entry.get("published", ""),
-                "source": "CNBC Indonesia"
+                "source": "CNBC Indonesia",
+                "description": clean_news_description(raw_desc, title)
             })
         return news_list
 
@@ -78,7 +131,7 @@ class NewsFetcher:
         cnbc_news = self.fetch_cnbc_indonesia()
         
         # Gabungkan semua berita baru yang ditarik
-        all_new_news = gn_news + macro_query_items if 'macro_query_items' in locals() else gn_news + macro_news + cnbc_news
+        all_new_news = gn_news + macro_news + cnbc_news
         
         # Muat berita lama jika sudah ada di cache lokal (agar arsip lama aman)
         existing_news = []
@@ -94,6 +147,8 @@ class NewsFetcher:
             if self.is_valid_headline(item.get('title', '')):
                 if item['title'] not in seen_titles:
                     seen_titles.add(item['title'])
+                    # Pastikan deskripsi arsip lama juga bersih
+                    item['description'] = clean_news_description(item.get('description', ''), item.get('title', ''))
                     merged_news.append(item)
                     
         # Tambahkan berita baru yang lolos filter
