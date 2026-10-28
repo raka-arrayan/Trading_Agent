@@ -6,7 +6,7 @@ python-dotenv>=1.0.0
 requests>=2.31.0
 beautifulsoup4>=4.12.0
 matplotlib>=3.7.0
-mplfinance>=0.12.9b0
+mplfinance
 
 langchain>=0.2.0
 langgraph>=0.1.0
