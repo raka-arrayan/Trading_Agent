@@ -19,5 +19,16 @@ services:
       - ./results:/app/results
     env_file:
       - .env
-    # Jalankan on-demand, contoh: docker compose run --rm backtest python main.py --mode backtest --ticker BBRI.JK --start 2026-04-01 --end 2026-07-31
-    command: python main.py --help
+    command: python main.py --mode backtest --help
+
+  live:
+    build: .
+    container_name: trading_live
+    environment:
+      - TZ=Asia/Jakarta
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+    env_file:
+      - .env
+    command: python main.py --mode live --help

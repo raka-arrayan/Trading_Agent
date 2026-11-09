@@ -123,7 +123,7 @@ def run_backtest(args):
         print(f"Ticker: {args.ticker}")
         print(f"Period: {args.start} to {args.end}")
         print(f"Initial Capital: Rp {args.capital:,.2f}")
-        print(f"Architecture: {args.agents} Agents")
+        print("Architecture: 12 Agents (Full MAS)")
         print("==================================================")
 
         # 1. Initialize and run Backtester
@@ -131,8 +131,7 @@ def run_backtest(args):
             ticker=args.ticker,
             start_date=args.start,
             end_date=args.end,
-            initial_capital=args.capital,
-            architecture=args.agents
+            initial_capital=args.capital
         )
 
         results = backtester.run()
@@ -369,8 +368,6 @@ def main():
     parser.add_argument("--start", type=str, default="2026-10-12", help="Start date (YYYY-MM-DD)")
     parser.add_argument("--end", type=str, default="2026-10-30", help="End date (YYYY-MM-DD)")
     parser.add_argument("--capital", type=float, default=100_000_000.0, help="Initial capital in IDR")
-    parser.add_argument("--agents", type=int, choices=[1, 8, 12], default=12,
-                        help="Jumlah agen untuk simulasi MAS (default 12 agen)")
 
     args = parser.parse_args()
 

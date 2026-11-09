@@ -8,6 +8,7 @@ requests>=2.31.0
 beautifulsoup4>=4.12.0
 matplotlib>=3.7.0
 mplfinance
+six>=1.16.0
 tabulate>=0.9.0
 
 langchain>=0.2.0

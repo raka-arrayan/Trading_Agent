@@ -23,13 +23,15 @@ def get_llm(role="analyst", provider="ollama"):
             base_url="http://localhost:11434"
         )
     elif provider == "gemini":
-        api_key = os.environ.get("GOOGLE_API_KEY")
+        api_key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
         if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is not set. Please check your .env file.")
+            raise ValueError("GOOGLE_API_KEY or GEMINI_API_KEY environment variable is not set. Please check your .env file.")
         
-        # LangChain's ChatGoogleGenerativeAI otomatis membaca dari os.environ["GOOGLE_API_KEY"]
+        if "GOOGLE_API_KEY" not in os.environ and api_key:
+            os.environ["GOOGLE_API_KEY"] = api_key
+
         return ChatGoogleGenerativeAI(
-            model="gemini-flash-lite-latest",
+            model="gemini-3.5-flash-lite",
             temperature=temperature,
             max_retries=5  # Otomatis menunggu jika terkena Rate Limit
         )

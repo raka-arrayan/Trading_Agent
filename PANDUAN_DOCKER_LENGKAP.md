@@ -7,14 +7,26 @@ Dokumen ini memuat panduan ringkas, jelas, dan realistis untuk menjalankan proye
 ---
 
 ## DAFTAR ISI
-1. [Prasyarat Sistem](#1-prasyarat-sistem)
-2. [Langkah 1: Kloning Repositori (Data Berita Sudah Siap Pakai)](#langkah-1-kloning-repositori-data-berita-sudah-siap-pakai)
-3. [Langkah 2: Konfigurasi API Key (.env)](#langkah-2-konfigurasi-api-key-env)
-4. [Langkah 3: Membangun Citra Docker (Build Image)](#langkah-3-membangun-citra-docker-build-image)
-5. [Langkah 4: Menjalankan Mode Backtest (Mulai 12 Oktober 2026)](#langkah-4-menjalankan-mode-backtest-mulai-12-oktober-2026)
-6. [Langkah 5: Menjalankan Mode Live (Keputusan Real-Time Hari Ini)](#langkah-5-menjalankan-mode-live-keputusan-real-time-hari-ini)
-7. [Penjelasan Fitur & Arsitektur Sistem](#penjelasan-fitur--arsitektur-sistem)
-8. [Rangkuman Perintah Cepat (Cheatsheet)](#rangkuman-perintah-cepat-cheatsheet)
+- [PANDUAN PENGOPERASIAN SISTEM MULTI-AGENT TRADING (DOCKER)](#panduan-pengoperasian-sistem-multi-agent-trading-docker)
+  - [DAFTAR ISI](#daftar-isi)
+  - [1. Prasyarat Sistem](#1-prasyarat-sistem)
+  - [Langkah 1: Kloning Repositori (Data Berita Sudah Siap Pakai)](#langkah-1-kloning-repositori-data-berita-sudah-siap-pakai)
+  - [Langkah 2: Konfigurasi API Key (.env)](#langkah-2-konfigurasi-api-key-env)
+  - [Langkah 3: Membangun Citra Docker (Build Image)](#langkah-3-membangun-citra-docker-build-image)
+  - [Langkah 4: Menjalankan Mode Backtest (Mulai 12 Oktober 2026)](#langkah-4-menjalankan-mode-backtest-mulai-12-oktober-2026)
+    - [Contoh Perintah Backtest (Saham BMRI.JK periode 12 – 30 Oktober 2026):](#contoh-perintah-backtest-saham-bmrijk-periode-12--30-oktober-2026)
+    - [Parameter:](#parameter)
+    - [Hasil Eksekusi:](#hasil-eksekusi)
+  - [Langkah 5: Menjalankan Mode Live (Keputusan Real-Time Hari Ini)](#langkah-5-menjalankan-mode-live-keputusan-real-time-hari-ini)
+    - [Contoh Perintah Mode Live:](#contoh-perintah-mode-live)
+    - [Parameter:](#parameter-1)
+    - [Hasil Eksekusi Mode Live:](#hasil-eksekusi-mode-live)
+  - [Penjelasan Fitur \& Arsitektur Sistem](#penjelasan-fitur--arsitektur-sistem)
+    - [1. Zero Look-Ahead Bias Engine](#1-zero-look-ahead-bias-engine)
+    - [2. Mekanisme Mingguan (Weekly Rebalancing)](#2-mekanisme-mingguan-weekly-rebalancing)
+    - [3. Struktur Hierarki 12 Agen (DAG LangGraph)](#3-struktur-hierarki-12-agen-dag-langgraph)
+    - [4. Strategi Benchmark (Pembanding)](#4-strategi-benchmark-pembanding)
+  - [Rangkuman Perintah Cepat (Cheatsheet)](#rangkuman-perintah-cepat-cheatsheet)
 
 ---
 
@@ -34,7 +46,7 @@ Buka terminal **PowerShell** atau **Command Prompt (CMD)**:
 cd C:\Users\rifqi\Documents\Seminar
 
 # 2. Clone repository dari GitHub
-git clone https://github.com/raka-arrayan/Trading_Agent.git Kode
+git clone https://github.com/raka-arrayan/Trading_Agent.git
 
 # 3. Masuk ke dalam direktori proyek
 cd Kode
@@ -74,7 +86,7 @@ Simulasi backtest digunakan untuk mengevaluasi performa strategi MAS secara keta
 
 ### Contoh Perintah Backtest (Saham BMRI.JK periode 12 – 30 Oktober 2026):
 ```powershell
-docker compose run --rm backtest python main.py --mode backtest --ticker BMRI.JK --start 2026-10-12 --end 2026-10-30 --capital 100000000 --agents 12
+docker compose run --rm backtest python main.py --mode backtest --ticker BMRI.JK --start 2026-10-12 --end 2026-10-30 --capital 100000000
 ```
 
 ### Parameter:
@@ -82,8 +94,7 @@ docker compose run --rm backtest python main.py --mode backtest --ticker BMRI.JK
 - `--ticker BMRI.JK` : Kode saham yang diuji (format Yahoo Finance).
 - `--start 2026-10-12` : Tanggal awal pengujian (harus $\ge$ 2026-10-12).
 - `--end 2026-10-30` : Tanggal akhir pengujian.
-- `--capital 100000000` : Modal awal kas (misal: Rp 100.000.000).
-- `--agents 12` : Menjalankan konsensus penuh 12 agen.
+- `--capital 100000000` : Modal awal kas (misal: Rp 100.000.000). *(Secara otomatis menjalankan konsensus penuh 12 agen).*
 
 ### Hasil Eksekusi:
 Setelah perintah selesai, sistem **otomatis** menyimpan seluruh hasil ke dalam folder:
@@ -101,14 +112,13 @@ Mode Live digunakan untuk mendapatkan **rekomendasi keputusan trading on-demand 
 
 ### Contoh Perintah Mode Live:
 ```powershell
-docker compose run --rm backtest python main.py --mode live --ticker BMRI.JK --capital 100000000 --agents 12
+docker compose run --rm live python main.py --mode live --ticker BMRI.JK --capital 100000000
 ```
 
 ### Parameter:
 - `--mode live` : Mengaktifkan sesi pengambilan keputusan real-time hari ini.
 - `--ticker BMRI.JK` : Kode saham yang dianalisis.
-- `--capital 100000000` : Modal kas saat ini yang siap dialokasikan.
-- `--agents 12` : Menjalankan musyawarah 12 agen.
+- `--capital 100000000` : Modal kas saat ini yang siap dialokasikan. *(Secara otomatis menjalankan musyawarah 12 agen).*
 
 ### Hasil Eksekusi Mode Live:
 1. **Layar Terminal Bersih**:  
@@ -152,8 +162,8 @@ git pull origin main
 docker compose build
 
 # 3. Jalankan Backtest (Periode >= 12 Oktober 2026)
-docker compose run --rm backtest python main.py --mode backtest --ticker BMRI.JK --start 2026-10-12 --end 2026-10-30 --capital 100000000 --agents 12
+docker compose run --rm backtest python main.py --mode backtest --ticker BMRI.JK --start 2026-10-12 --end 2026-10-30 --capital 100000000
 
 # 4. Jalankan Mode Live (Keputusan Rekomendasi Hari Ini)
-docker compose run --rm backtest python main.py --mode live --ticker BMRI.JK --capital 100000000 --agents 12
+docker compose run --rm live python main.py --mode live --ticker BMRI.JK --capital 100000000
 ```
