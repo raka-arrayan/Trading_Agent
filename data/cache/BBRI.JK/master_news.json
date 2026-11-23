@@ -23861,5 +23861,719 @@
         "published": "Sat, 21 Nov 2026 18:51:17 +0700",
         "source": "CNBC Indonesia",
         "description": "PT Bank Negara Indonesia (BNI) raih peningkatan MSCI ESG Ratings dari A ke AA, mencerminkan komitmen keberlanjutan dalam strategi bisnis dan operasionalnya."
+    },
+    {
+        "title": "Buyback Saham BBRI: Apa Artinya untuk Investor Ritel? - Ajaib",
+        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5nM1BwNTQ3Tk1yd2QzaktaRjk5UFdwaTVVSjYzWkxYY3RfX1lGSTlpajRPRDFOdWFGdkI1eEY5cU9yQXFXV2hyQzVLSmlyb05zc0JLNngzWHJ2aVpfVTN3bFhpQkZHWHpVY2ZQTjZzRGNjRDkyR1FiWG84OUE?oc=5",
+        "published": "Mon, 23 Nov 2026 10:07:30 GMT",
+        "source": "Ajaib",
+        "description": "Buyback Saham BBRI: Apa Artinya untuk Investor Ritel? Ajaib"
+    },
+    {
+        "title": "Saham Bank Jumbo BBCA, BBRI, BMRI, dan BBNI Mendominasi IHSG - Bisnis Indonesia Premium",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWDZWeVNXNWxvV0syUkl3ekFMVXNTU2dGSDN0SUFGSERaYVFoS2VuUHNQX2NRbWVjbUpacEt1QVkyak5lT19QLWxSZ0UzR3ZzaFF3M0R4RFJwckJQbTFkbkt4dkRUVlk2NzR5amliaWVaZnZSZDBhMVNEOUVDVGM5VjJVVzFYa3ZEX3BwMzVYVS0ya1Q3TFQ5NXFyZHRqVmcwY3hQZXg0WkpKTXozMTln?oc=5",
+        "published": "Mon, 23 Nov 2026 02:08:00 GMT",
+        "source": "Bisnis Indonesia Premium",
+        "description": "Saham Bank Jumbo BBCA, BBRI, BMRI, dan BBNI Mendominasi IHSG Bisnis Indonesia Premium"
+    },
+    {
+        "title": "Saham BBRI Sempat Diborong Asing, Kini Kembali Dilepas Meski Laba Tumbuh 16,8% - Ajaib",
+        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQcDN3cHNfaWdEcmpITkFoTzh2MUpnVTVYNUhneEc5Nk93VjJ4QXFQU3RPOVFlaV9mbUlNWVdaNDc2WVYxc2lueU5teHk3N01vS0ZwdTVOalNoakJtQzdLa29QdHQycTE0Q09kWFhaOGRkNmVKVkNCVnZiN292anhjRHZCMHJEXzZOU1pBMFpkYW56UnBFSEpNWHYtajNEMDdHNktnT1ZQNkljSXVPOS1haC1qcFZ3ekx1blFIbTJkOUhMTkNHcW1Hdg?oc=5",
+        "published": "Mon, 23 Nov 2026 04:00:59 GMT",
+        "source": "Ajaib",
+        "description": "Saham BBRI Sempat Diborong Asing, Kini Kembali Dilepas Meski Laba Tumbuh 16,8% Ajaib"
+    },
+    {
+        "title": "Investor Asing Lepas Saham BBRI BMRI dan GOTO Rp512,2 Miliar - Demokratis.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtcGhpNXJJalpiZ050aTV5dDNiNm1vX1FIbzdsMTh6dk9qTnhqM0FkUGRBcnVsM0hubE1xLTJQa011UDd0VnZuRHBGOER0elQ3Um1meGpfQjA1SnpJUDBNS3lpNkZJQzQ?oc=5",
+        "published": "Mon, 23 Nov 2026 06:22:35 GMT",
+        "source": "Demokratis.co.id",
+        "description": "Investor Asing Lepas Saham BBRI BMRI dan GOTO Rp512,2 Miliar Demokratis.co.id"
+    },
+    {
+        "title": "Harga Saham BBRI Hari Ini, Senin 23 November 2026 - Pintu",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9pZzZUUkcxWXJqcjVVS3RGOUd4WWVtNmtBTk96UnVFX2VMUnQ0MEkxdXo5aVRCalpvWkJ1U3Z6bzFoYTZFZEtqZ0hsVG8zU2p0dERTVDQzX1JZcEVldmJPQklCOEpPSVJzY21taGh6YnB5RFhnVXlGQ1cyS1RTdnM?oc=5",
+        "published": "Mon, 23 Nov 2026 06:50:51 GMT",
+        "source": "Pintu",
+        "description": "Harga Saham BBRI Hari Ini, Senin 23 November 2026 Pintu"
+    },
+    {
+        "title": "IHSG Melesat 1,59% ke Level 5.228 pada Jeda Siang Saat Asing Buang Saham Rp512,22 Miliar - blokTuban.com",
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxORms1SmlnSTJFczdnZmVNRm55cHNPTnRod1NleGVmVVBqdGpuWDR4ci03ZDlCUURyV0paTGc4MlV5bXJ6YzFBSjkxLUp1QkNzdmxnQmpYSVJob3RsLUVBbGVaVWlnc21CYThnSG1PUHp5Uk9MeVhWTTNucUZTaUlTUFVZdnVsc3BsanZaaVJjTEhfZnVyQVBYc3RXR2JKbWdFNGppLVJfc0xmMkhTektrNkN4alN0TFppNEZVVXRn?oc=5",
+        "published": "Mon, 23 Nov 2026 06:27:00 GMT",
+        "source": "blokTuban.com",
+        "description": "IHSG Melesat 1,59% ke Level 5.228 pada Jeda Siang Saat Asing Buang Saham Rp512,22 Miliar blokTuban.com"
+    },
+    {
+        "title": "Investor Asing Borong BBCA dan Lepas Saham Tiga Bank BUMN - Demokratis.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE4zcUVSVU9MXzc3SDBoUENPS1dWUlRURWE1VUE3TzVLV1pUQTh4bXhaRk5kcmFNSG5kazlvWlR6aFJuM01GZll2SWpDc0pQLS1uQUpKcFk2d0J3Rkl4NTh6b0Y0X1gwbW9WX3c?oc=5",
+        "published": "Mon, 23 Nov 2026 06:48:25 GMT",
+        "source": "Demokratis.co.id",
+        "description": "Investor Asing Borong BBCA dan Lepas Saham Tiga Bank BUMN Demokratis.co.id"
+    },
+    {
+        "title": "BRI Danareksa Rekomendasikan EXCL BUKA dan ELSA - Demokratis.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE01YmdaemNOSVdqMm5vSlpIdHdnWm5SSHVOMUc3RDlaRTRmb2QtdmUzTkl4Qk05VFpSQk9XUllRVldnV2NIcHhHUTE4OTRIVk9LY0NfTXVNeTdCa085OFF6SGUtdmxHX3ot?oc=5",
+        "published": "Mon, 23 Nov 2026 00:32:33 GMT",
+        "source": "Demokratis.co.id",
+        "description": "BRI Danareksa Rekomendasikan EXCL BUKA dan ELSA Demokratis.co.id"
+    },
+    {
+        "title": "BBCA Pimpin 10 Saham Penopang IHSG pada Pekan Ini - Demokratis.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBsUG5rSE9ESlY4WTh2MTB0czhQbkdmZC1lM1oxam85Z2hpajVqQWlqeVlJWGE5NW1OWG0zYl8zRGdMbXdGYWFLcS1yU2lBcmZxUTZKUjVNenBRVF9JQlAxUHFieTA2U28?oc=5",
+        "published": "Sun, 22 Nov 2026 12:04:41 GMT",
+        "source": "Demokratis.co.id",
+        "description": "BBCA Pimpin 10 Saham Penopang IHSG pada Pekan Ini Demokratis.co.id"
+    },
+    {
+        "title": "Harga Saham BBRI Hari Ini, Jumat 20 November 2026 - Pintu",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ZaDVJcEkzSmtKQW4wZ0ZERDdzNmIybEFha3JFSXJGU2J6TFJoX2tYQlYzeG9LY1NqdXpmdGRWUms1OHF1eGVnWl9rWDNYdktZOFBaYlhfdUJEQjcyRmJKQVlDLW81dkpSWUJUc3NHMnRwbU9NMVotRG1BZnVOTWc?oc=5",
+        "published": "Fri, 20 Nov 2026 08:00:00 GMT",
+        "source": "Pintu",
+        "description": "Harga Saham BBRI Hari Ini, Jumat 20 November 2026 Pintu"
+    },
+    {
+        "title": "Wawan Nilai Saham Bank Himbara Murah Usai Tekanan Asing - Demokratis.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE12YkswOXk4dUpYS0EwMVZPY28wLTg0ald1MVJvNjNES3M2ZmhPWXVFUjZSbUUxc3RSQ1VKcXMtX1Z3WGZGZGdPZmZnUkVPZW9qeDVEUXZXZlVCQWFISE1nbWdrOGMwZnpVTkE?oc=5",
+        "published": "Sat, 21 Nov 2026 12:41:15 GMT",
+        "source": "Demokratis.co.id",
+        "description": "Wawan Nilai Saham Bank Himbara Murah Usai Tekanan Asing Demokratis.co.id"
+    },
+    {
+        "title": "IHSG Hari Ini Anjlok 1,5% di Sesi I, Asing Lepas Saham Bank - Gotrade",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNa29UODR2akZfZC1qOVNxczAtVnV0dUVUS0R5VTFSNlduLUU4NDBpcWw3bG5FcU5XaGpTeGFjLWt0QUVjWlV6eTNka1lLZU5MWmFhQWl5UGNuN01xZlpsM25XTDY0T1hTZWY5TTFkd1pfTGtUWGxVYkR0WTRGZ3ppYXhwWnNKUQ?oc=5",
+        "published": "Fri, 20 Nov 2026 07:24:00 GMT",
+        "source": "Gotrade",
+        "description": "IHSG Hari Ini Anjlok 1,5% di Sesi I, Asing Lepas Saham Bank Gotrade"
+    },
+    {
+        "title": "Harga Saham BBRI Hari Ini - Bank Rakyat Indonesia (Persero) Tbk. = Rp3,090 - Ajaib",
+        "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBSMVY3OE9UeUlKRnpZWU1yclRkSkl4M0dOMjBOR3poYV9YYlRScFU5czI4WTlDelBBYUlOZUd4bFZ2bDN3NHBRM3RLMA?oc=5",
+        "published": "Sun, 24 Aug 2025 17:34:51 GMT",
+        "source": "Ajaib",
+        "description": "Harga Saham BBRI Hari Ini - Bank Rakyat Indonesia (Persero) Tbk. = Rp3,090 Ajaib"
+    },
+    {
+        "title": "Harga Saham PT Bank Rakyat Indonesia (Persero) Tbk (BBRI) Hari Ini, 23 November 2026 - FORTUNE Indonesia",
+        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWWtfN1ZWSlNRX1pVRUtfYVJEZHozbXhyUXVKREx6eGpPSVlTQnFEUzRkaEFaWVYwQWVkYWxWT3NyQ1lFZ3hzUFFYdk5QbThfbXlEaFBBQmJfM0dxa09oNGNaN29UaVNRRTdZVlNHcFItWmtwLUM1bFZ3MWJSaHplWWZwRURiOVVMOXN6SUFyRTBVWGhxSGM2WmxhSHlXb1V1Rzk3V0ROT0MtMWJCSVVseUNzak1aTVRoNFlSR2VxZDhfT05JLXVlb9IBzgFBVV95cUxOM0l1UDFZekRaaDZrQ2ZaZExEcmZXMVZSSjY3RmxxZXoxdkdhRjg2cDlGNmJTWXN2Z2hnUWxaUlEtVUkyU0U2U05NTDFQblBkQkplbDNKU3NYb2pJYnRabGFJazhGQzUzYWs0Zll0dnEzLVJKbk11djd1OHU5UklranlaSVpCWkk4Vk9MWDhIU2thMzlaRTNtRE1pbzZwUkVBODNzc0V0ZkJRUldMZHlUNFRhUURNWWF3U1BTRVRDQ3pmX0RTOEYxUUd2NTdPQQ?oc=5",
+        "published": "Mon, 23 Nov 2026 02:40:00 GMT",
+        "source": "FORTUNE Indonesia",
+        "description": "Harga Saham PT Bank Rakyat Indonesia (Persero) Tbk (BBRI) Hari Ini, 23 November 2026 FORTUNE Indonesia"
+    },
+    {
+        "title": "3 Saham Kena Amukan Asing - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9LNmV6NjR5SkJNbE9ER2RhSHZhdmVhaTRQR2loSEUyZndkNzJLenpPRjNFQTFjbm1hbkZuN3FUTFRHVFBtcnZUZFRZLVNWVm1vRkdwVXNGZTNodFhHX2hrUm9BOHp3b3IwWGlF?oc=5",
+        "published": "Mon, 23 Nov 2026 06:19:14 GMT",
+        "source": "investor.id",
+        "description": "3 Saham Kena Amukan Asing investor.id"
+    },
+    {
+        "title": "BBCA Diborong Investor Asing Rp87,80 Miliar, BBRI hingga BBNI Dilepas pada Sesi I - gadget.qoo10.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOanlTQUxobGtTMzNwM2c4OGV4LVZqb0hZaUR3UWs5UEcyM0JvaXJvOHBWMi1OY3ZZaFFVbVQ4ZExOczEtRFhYdXVYQXU5QXVUcVd0bWJuV0VoSWlDc2NvM21uNENBNVczaExfZG5RUHA1UzNiOTVfZDVjZFdLdWZNcG5UUEQ2QzUzUGc?oc=5",
+        "published": "Mon, 23 Nov 2026 06:50:52 GMT",
+        "source": "gadget.qoo10.co.id",
+        "description": "BBCA Diborong Investor Asing Rp87,80 Miliar, BBRI hingga BBNI Dilepas pada Sesi I gadget.qoo10.co.id"
+    },
+    {
+        "title": "BBCA Diborong Asing Saat BBRI, BMRI, dan BBNI Catat Jual Bersih Sesi I - gadget.qoo10.co.id",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNWGtBS0o4SHZzN0x6UlBWNTVQMEF4ak5mTndEckYwSFdObnRIODZoMENfREozSUt3a1hyYk0xcUhLWkg5SXFHdnRVZVQxdkVpOFpINDkxd2FWM2Q5Vkh1OUZpNVM3OU1WT0MyNkdITmR6TG5CSXhsMkNZNDJFcnl5WjdtajUya3NFTVVtTDFBMA?oc=5",
+        "published": "Mon, 23 Nov 2026 06:54:47 GMT",
+        "source": "gadget.qoo10.co.id",
+        "description": "BBCA Diborong Asing Saat BBRI, BMRI, dan BBNI Catat Jual Bersih Sesi I gadget.qoo10.co.id"
+    },
+    {
+        "title": "4 Saham Disapu Gelombang Jual Asing - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1pcEZhNjV2S1cyUTBIZGRtQnpycWUxZEQ1NTNxZlZtTVhRdEhyUEpvWUdRWmM0SG9lbElhblExWldHU04tbnJCMTFSR1kxWlBoZXdXSHVvNGd5dTRvNGl6S0NoTmtFYU5VLWlwMmxzajhJekkyRzJrTg?oc=5",
+        "published": "Mon, 23 Nov 2026 13:35:23 GMT",
+        "source": "investor.id",
+        "description": "4 Saham Disapu Gelombang Jual Asing investor.id"
+    },
+    {
+        "title": "BBCA Cs Jadi Penopang Gerak IHSG - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1aajFiLUQ4S3FCT1RtbjVxc1lmNVh1dGNrTHNsTC1RODBsNFN1ZjZ1cnV3dERmbklERzVYYWFuTUVRRXJhU1F0OS1lVXd6M2lmUlF5SF84a0tXV1VrTklJOG54SlBrVkJna1lOQzNHeDlYTzdN?oc=5",
+        "published": "Sun, 22 Nov 2026 12:00:00 GMT",
+        "source": "investor.id",
+        "description": "BBCA Cs Jadi Penopang Gerak IHSG investor.id"
+    },
+    {
+        "title": "Bursa Saham RI Kehilangan Rp 322 Triliun - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4yb2RVNmhYbHJZR0xvZ0k5MHpndlZrcE04dGFMc3RmTnBrcUtCOWpIU1JYeF9rVDlZWURkNGNyU0I1UnhzaEhXRkYxN3FTdGYwYnNTQnJWNWsxODhTX3V2aGFxU204cU91YXM4UzV6S2VkVGx2U0dnaEF0QV9kYVk?oc=5",
+        "published": "Sun, 22 Nov 2026 07:00:00 GMT",
+        "source": "investor.id",
+        "description": "Bursa Saham RI Kehilangan Rp 322 Triliun investor.id"
+    },
+    {
+        "title": "Saham Bank Besar Jadi Beban IHSG, Indeks Bursa Indonesia Merah Enam Hari Beruntun - Semangat News",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZnRTRHNqUVBib3k2X2NCRWhYRGhlMXNIVmJnUHRTNUVFeHpaQ0dKWG9YcVFtV2RNTEtDRmNxWG5DYnhLdkk4cXRramt3UWJXWTRJbjdJM2kwbU1OLXhFazJUempFRy1mOUZvTXc5bElJTU9tTWpjS2hrdXhUVGo1cjBfNVhJbkFKT1luVUJ4M2JrUDh1elBScGUyZEM0ZTNwYU03TWtMXzNSNFpjaVNz?oc=5",
+        "published": "Mon, 23 Nov 2026 04:47:40 GMT",
+        "source": "Semangat News",
+        "description": "Saham Bank Besar Jadi Beban IHSG, Indeks Bursa Indonesia Merah Enam Hari Beruntun Semangat News"
+    },
+    {
+        "title": "IHSG Dibuka Melemah 0,34% ke 5.303, Saham GOTO, MBMA, BBRI Justru Melaju - Bisnis.com - Market",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQlJOWHlkb2RNWFN4UHJDMnlBTlQ2ZllKTXlMX0lXaUFQUjh6WlN3QllzcVNlSEhoRkFUdU5PWWtmVUowNUNWOEtCNDR3ZXVFbVdaZFZOS2o2c3duUjJsTzlBbWg4WXZqZE5CSDR5QjN1UkI5dFFjMVhTblQyUWlmS3M4c09OMm5HRURzVkl2M2hKc2R4Mm4tdE40VHRKS2dncklheTlIOURZeEJ5RzRvM2ZZcDNGcHc?oc=5",
+        "published": "Tue, 17 Nov 2026 02:31:19 GMT",
+        "source": "Bisnis.com - Market",
+        "description": "IHSG Dibuka Melemah 0,34% ke 5.303, Saham GOTO, MBMA, BBRI Justru Melaju Bisnis.com - Market"
+    },
+    {
+        "title": "Saham BBCA Menguat 4,55 Persen Saat BBRI, BMRI, dan BBNI Terkoreksi Usai BI Rate Naik - Qoo Media",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0xQUdteVg5TkxCMGhXZUNOUWZWalExSXRKWjdCOUxzWXBoZkxEWlRDd2txallma1RCYUtLNF9IeWZPNHdyN00wVDY0Z21pNlVLbDBKckIxT19yakQwWG5CLXhIM3ZRNDdscF9wLWZzb09HR3g2Q2dxeA?oc=5",
+        "published": "Wed, 18 Nov 2026 12:27:00 GMT",
+        "source": "Qoo Media",
+        "description": "Saham BBCA Menguat 4,55 Persen Saat BBRI, BMRI, dan BBNI Terkoreksi Usai BI Rate Naik Qoo Media"
+    },
+    {
+        "title": "Net Sell Asing Jebol Rp 100 Triliun, Reguler Nyaris Rp 130 Triliun - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQM3NGTFp3WV85RFdCcmUwZkZjcVJteWktcjlPbU43MURuN0VqaF9WNU9BYmpNZDZaRnJkdTNHcXBCZFgxRXNYWDZ6M1BCbndJOVl3VkJSQ19VcU90cmROZkxFT25PdzE1azk2NVltVHVCeUlDVlZSR01HXzBMdWhkX3VxQmtxNFdjZUxjTnFlNUJxZDJ1M3JIN0NIZ21QX3Ix?oc=5",
+        "published": "Fri, 20 Nov 2026 13:38:00 GMT",
+        "source": "investor.id",
+        "description": "Net Sell Asing Jebol Rp 100 Triliun, Reguler Nyaris Rp 130 Triliun investor.id"
+    },
+    {
+        "title": "Asing Borong Saham BBCA dan Lepas BBRI BMRI BBNI - MediaKompeten",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMmxFUXBicjVKUUQ1MHpXMlAtazRiYXo3NWxyY3VhdFpfRnEzN2dFTnQ3RklCeDNDdFRpSHotbTlBR1NVcHNZdVZQbFp3QzFCTXV4TktWa1U5YVpuNXIwTEVMeWFpamxSR2ZVWVkxZWRpNlZYcjJMVzRMZWpuNVhRRzVMU0F2Q0U?oc=5",
+        "published": "Mon, 23 Nov 2026 06:51:09 GMT",
+        "source": "MediaKompeten",
+        "description": "Asing Borong Saham BBCA dan Lepas BBRI BMRI BBNI MediaKompeten"
+    },
+    {
+        "title": "IHSG Masih Rawan Melemah, tapi Cermati 6 Saham Andalan Cuan - investor.id",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVFpBZ3pvLUpPQTZkZ3VwU1AyMUFQSlJPZnMyWmltRFFWRklfbkxLMFlRd3R1aUFqU3hMUXprOVNxVTFGeHZqWVEwSDhwb1ZfckdHOTlIZEpmV1lFVWpiMlRhRGluYmNHQ1lJa0I0dGRrQTBrWmdyV1JVSTctd1Y0bG5zbFp2eWZ6WjZRSTY5c082V0I5eTBN?oc=5",
+        "published": "Fri, 20 Nov 2026 01:52:29 GMT",
+        "source": "investor.id",
+        "description": "IHSG Masih Rawan Melemah, tapi Cermati 6 Saham Andalan Cuan investor.id"
+    },
+    {
+        "title": "Investor Asing Jual Bersih Rp 855 Miliar, Saham BBCA Paling Banyak Dilepas - Qoo Media",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPS2llMnE3ZDV3OG5IcjNva1Vhc09OdnlkYjE1OFlOMEVhR0lXTTRnT0tPdGNaSDg1ZXFVT3RGcUR2TjBzT3dGaDZYQWtZejFpRzUxc043YUszeWVqdDhaVUpQUllVbEpGRnJGZDlLbVNwZnVNS3RzYUpHNWw5NkpNV0xUaWxHdUdiVWRLaGlRTQ?oc=5",
+        "published": "Sun, 22 Nov 2026 00:26:17 GMT",
+        "source": "Qoo Media",
+        "description": "Investor Asing Jual Bersih Rp 855 Miliar, Saham BBCA Paling Banyak Dilepas Qoo Media"
+    },
+    {
+        "title": "Sepuluh Saham Ini Topang Pergerakan IHSG Sepekan - ChatNews.id",
+        "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rV2F6RlpFXzRtSTBLbEtsdkE5YXRBQ0s2UDZSQXZlclFkQTB1akZOWW9uelUycXl6dGhybUx1enZUQkNzUTNITWdlWlFNOEFoWFluT1Q3MlA?oc=5",
+        "published": "Sun, 22 Nov 2026 12:02:06 GMT",
+        "source": "ChatNews.id",
+        "description": "Sepuluh Saham Ini Topang Pergerakan IHSG Sepekan ChatNews.id"
+    },
+    {
+        "title": "Asing Jual Bersih Rp512,2 Miliar Saham BBRI BMRI dan GOTO - MediaKompeten",
+        "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1kZktXVGNuMXN3R0trZVROZUN6dExJZ19NcWN5Sll5YzNEdTFHOFdPekhJRkFNMVB0aGkyTWxaZnJDQ2lfSzdoaml6YnNtMzdiakFGWEFhd09VbmdNbDMtdV9rMTF3Zklxd0lteERQQlM?oc=5",
+        "published": "Mon, 23 Nov 2026 06:22:04 GMT",
+        "source": "MediaKompeten",
+        "description": "Asing Jual Bersih Rp512,2 Miliar Saham BBRI BMRI dan GOTO MediaKompeten"
+    },
+    {
+        "title": "OJK Sebut BI Rate Naik Tak Serta-merta Kurangi Minat Lender Individu Fintech Lending - TradingView",
+        "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA4UkNpUGNxc1kzS2dKMl9SUFBUUVYteVhxSFdSM2liMk1NQmxzVGwtUEFITUhheXZKdThmOGpCQll2SlZWZ1c3a2NrWGhOYWQteDdndlZUQXZVc1psRjRLb3lNMzBZdw?oc=5",
+        "published": "Sun, 12 Jul 2026 07:00:00 GMT",
+        "source": "TradingView",
+        "description": "OJK Sebut BI Rate Naik Tak Serta-merta Kurangi Minat Lender Individu Fintech Lending TradingView"
+    },
+    {
+        "title": "BI Rate Turun, OJK Minta Bank Sesuaikan Bunga Kredit - detikFinance",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNT0E4UF9RU2FUYmxIRzZ1dURIakUyX2E1aUtEbkZ5N3Radk9EVnF4dnpCcEpvcEhyVE9VRXQ3bktHVUp6S3FQaDRvUkdBZkRmYk5abnN2Wmh3OXFDNWhKVEpzbUI4aTM0VURVT2Y5czN0MG5RWnJTT2kzRVhSXzdNZUhxY0hMbVA1NzBiM05oMFU2bXJ1eFZlU3dJMNIBoAFBVV95cUxOXzZlYWhtdGdYc3Vya1RLQURXbU5qZ0UtTjhCRnlkOEpwR1BuZlFraFdEUXpnNDFfLVc2WklLMEhHS0NDOG5FalB1YXVUS0wzUWpkNWRUODFaWURnUExtbHFIUUxRLUNTV2hPRElic3NUQXl3REZtTjJubGJLa2tmdmExT3FtTVFPd3RkZzFMVFVFakg0d3dzdnlJcFVzalgw?oc=5",
+        "published": "Mon, 25 Aug 2025 07:00:00 GMT",
+        "source": "detikFinance",
+        "description": "BI Rate Turun, OJK Minta Bank Sesuaikan Bunga Kredit detikFinance"
+    },
+    {
+        "title": "Mengapa Suku Bunga Kredit Perbankan Masih Tinggi - Tempo.co",
+        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPYlgyQkNRX1dMT0lFMmZxdTJpZlcyVXpCLUpOay05anlZdF8xMWFGcDVOdFhzWTYtWVcyUFlQeFdDV1lQTFVpMVQ1Ri1tSDhweHQxTkJXVzl2d3E0dE9iZEpJbmMzU2Zxbnh4T3dLNUZQeGRPZUxSdjJGTm4yVEhudGNnVENPY01QRlIyR1FR?oc=5",
+        "published": "Wed, 30 Jul 2025 07:00:00 GMT",
+        "source": "Tempo.co",
+        "description": "Mengapa Suku Bunga Kredit Perbankan Masih Tinggi Tempo.co"
+    },
+    {
+        "title": "OJK Minta Perbankan Sesuaikan Suku Bunga Kredit - detikFinance",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZjZYQ3RrNERNOUl5RV91bjVMa1pRU3hqcTlHTUJCSldNNkc1RDItdWhjTmg3MGpPSE40SDI4ZXJ3Wi1nSWJyOFIyUDNEd3lnV203dHo3OU8yUE5vVXVjd3dYVzRVZDROZHgxUnFURi05eHRiMGJ4TGdJWTkzSFhSWC1rTjVyY3ZZVnhtVUFUTkp3Q2hNdWfSAZsBQVVfeXFMTWFFLUR6SHlESmphWWxGZkpsRE9BVkhOTkFMYmhEQTQxYmNoSjc5eTBoVF9OOEZmNEl6Vmhrb2tqNU81TmhaTkl3eElSSTVUaHNUMG5URW1kVjZ6VTlGV2VDTFFaM0d4WE9HTnN6MWM2REVJZV9qTldRWDM4ZURuWXAzaWM1V1JDVFBiZU1MVWJkNnJrMmR0aUR6bUU?oc=5",
+        "published": "Sun, 24 Aug 2025 07:00:00 GMT",
+        "source": "detikFinance",
+        "description": "OJK Minta Perbankan Sesuaikan Suku Bunga Kredit detikFinance"
+    },
+    {
+        "title": "Koordinasi Erat dengan Pemerintah dan OJK, Perry: BI Terus Dukung Proses Pemulihan Ekonomi - Sekretariat Kabinet Republik Indonesia",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeUl5Q3VDcW5aNm1ZWDdJcjhpNVhRd0FmRWpsekRrNWl3dV84RnpLNmpaWENVam1vSWdCQkRxTDd1Yy0wMkhmRmxza0ZROEcyRkZEZXd0aDNNZEdPUnBxclJ0VklFeEhYSkRMeEZMWURkdUQxX0wtVlotUXpxRHNEanY1YUJzMEFCSjlFUTdpbzVOQ3NxN2hvLWR4VzlFT2o5cWtjQ0M4TDlxc1BESlBj?oc=5",
+        "published": "Thu, 04 Jun 2020 07:00:00 GMT",
+        "source": "Sekretariat Kabinet Republik Indonesia",
+        "description": "Koordinasi Erat dengan Pemerintah dan OJK, Perry: BI Terus Dukung Proses Pemulihan Ekonomi Sekretariat Kabinet Republik Indonesia"
+    },
+    {
+        "title": "OJK Ungkap Alasan Kenapa Bunga Bank RI Bisa Tinggi - CNBC Indonesia",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOU2FFbC1QSjZ1c2F5a1FCUVpad1hZVURXRGFCNUtDSGRUWmRIbElfUGFqXy1Oejh0bjhwOVFUTU40b2JVUlYwRDhhZ2U1QUJrbzlpcGVvSVBZdE5ZZDBFcTRSeVhuVURGTndFWmJMY2hob21IRVo1Wl9RNkpDVXdEaW1OMldjUThaLXhJSDNuWHYxTS03SlJHVHZ6NFM0T1R2MEtGSFI4X21rMW1LWG51VU9B0gG3AUFVX3lxTE90SzdFQjd6VTVxa1YyWUgtdmM4SjZhbG5rMzRDUmVnRVNVbzI4eE93NE02cXktMWIyaDk3SERrd295VXEwVzdUTWluUzhiRU1tdFE2aGlETm5IdG1CQkVzWm1UbjBfcjFGbU85WjZsbTJtQlhKWFVfSXowQzlfZHhNRTQwM2gwWEkzOGhLbEU4NEp2S012czlwTDZETGJOMXhHUDBMNGkzQWo5NGJWX2thMFFKNF85NA?oc=5",
+        "published": "Fri, 17 Mar 2023 07:00:00 GMT",
+        "source": "CNBC Indonesia",
+        "description": "OJK Ungkap Alasan Kenapa Bunga Bank RI Bisa Tinggi CNBC Indonesia"
+    },
+    {
+        "title": "Tren Kucuran Dana dari Pemerintah, OJK: Likuiditas Perbankan Masih Memadai - Kompas.id",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5mOFhIc0dqQk10aTl6UTFfUFVtZnlNcE0xUXRCcE1OanduOW1RdldERU41Tk1vbW1QZTVzdEkyaDA5V1UyY0VneEVGVEdhSUtBb3hfaTdxM2t2ci02bncyZ0JtNjhmYUx2Zk9Xa2RqXzhMNkZVOG04?oc=5",
+        "published": "Thu, 09 Oct 2025 07:00:00 GMT",
+        "source": "Kompas.id",
+        "description": "Tren Kucuran Dana dari Pemerintah, OJK: Likuiditas Perbankan Masih Memadai Kompas.id"
+    },
+    {
+        "title": "OJK Berencana Melepas Capping Suku Bunga, Bagaimana Kinerja Bank BUKU III? - Bareksa.com",
+        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNdWc5blpLTTB5bXpyMVI2UXBnNlRxYlZUOGtyb2pfWGUyWUtwU2pGMGpzbjlfc3VNbnBOdVlkUVZFcTQwN0FZaHFEOWI0MGplR0VXdklEYzh2aHNCcGZRYkpTQWpLWHNwaXpXVDVYazduSVZyYjBoM1czSld1QzFxQ1pud2JhSTU0OEdaU2NwRzlsNm5RQmR1MVRKWjJUb1pWRlZCaHN1OW1UTG1Xa3c2Ri11SElGSDNYX3BNdmxvd3M5TGgyM2F5WmxTUGNwbFByekR3?oc=5",
+        "published": "Thu, 08 Dec 2016 08:00:00 GMT",
+        "source": "Bareksa.com",
+        "description": "OJK Berencana Melepas Capping Suku Bunga, Bagaimana Kinerja Bank BUKU III? Bareksa.com"
+    },
+    {
+        "title": "OJK Catat Sejumlah Bank Ini Memiliki Rasio Kredit Macet di Atas 5% - kontan.co.id",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUGU2cGNMLU5ndXk0dFpIRVlvMjZZM1RrajE5MUlDZlNwTm9OSVI5b0g4R0FaR3VUTDUwVmRsVDhmQmFOUktRU0hZVGRYdzNZSUxkd0R3SHN5U2lnclZiNXZsdlhqclkybTZnUk81UGxLd190aDNfbGF5ZTNPVWtFNkdEZVB0YXB6Z2pVZzRKQkNYQ3ZEX0hxWFVuZVNvZ1VuMndz0gGbAUFVX3lxTFB1d194WFVOQUF0cXhFRW5OWTdGVS1mRk5YWkNya1h2eXh2WDgyTlJNSjJzeHd0Zm5wYUtSeXdqc05zYW0xQ29FZzgyWlc1bHExbzdISy1rTFY5TkFPRjFPOGxCVDM2UjRtYXdvZHktRFpiMEJ6R2Fzemx2Q0Jyczlfekk5Rnc4V1ZrNDVfdUh3bGN5NklyT2dxUlpj?oc=5",
+        "published": "Mon, 25 Sep 2023 07:00:00 GMT",
+        "source": "kontan.co.id",
+        "description": "OJK Catat Sejumlah Bank Ini Memiliki Rasio Kredit Macet di Atas 5% kontan.co.id"
+    },
+    {
+        "title": "BI dan OJK Bantah Ada Kartel Perbankan - Hukumonline",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPV0J3OXZzWUMtb3p1N0ZSNUdaNExsRXcyZlN3UjF0OENQN2ZWZk9iTGF1Q19zZkJhRE9vWHdGb0IzZ2ZjWVpPa1dJSGpuaDJ2eThMaldCaEp4WFhqa0VqNlppM3R3aml0cHhZUTVsaDJPMnoyT21NWW9QZWdIODF6Q1VqdldILVB6LVRIaWNuQXR4SGZBV0Vn?oc=5",
+        "published": "Tue, 09 Apr 2013 07:00:00 GMT",
+        "source": "Hukumonline",
+        "description": "BI dan OJK Bantah Ada Kartel Perbankan Hukumonline"
+    },
+    {
+        "title": "Higher For Longer, OJK Jaga Stabilitas Keuangan di Era Suku Bunga Global Tinggi - detiknews.id",
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTVUyeWt0Q3hpdF9DZ3d3UzJnX3ZCLTRidkJvSVh4aFZ5RFRnV05xYTJLRFJGcWNiSmpCRm1GYlZJV0Q3WWhRMHd4WFJ3S0VQZm9GMDFfWWhiV2RnVTZIVlhaRnh1UHF2VUM5VGVrdUZiT2hIaDhYNFZCUDhXNFJGb2VMcFluNm5RV3NIN2l2cHMtT2d2SUZCQjBvTFUyWjVmSnZLU0JFRkN3Z3JyVW1MNElraTh1Zw?oc=5",
+        "published": "Thu, 12 Oct 2023 07:00:00 GMT",
+        "source": "detiknews.id",
+        "description": "Higher For Longer, OJK Jaga Stabilitas Keuangan di Era Suku Bunga Global Tinggi detiknews.id"
+    },
+    {
+        "title": "Berita Hari Ini : OJK Restrukturisasi Kredit, Harga Emas Kembali Naik - Bareksa.com",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOX3NjRmdlTlBLNVUyeE02TEpRMHk5SVhJWTZySll6WDJFVlJwaDZaTG1WLXZZd1pMY05XVDJfV1VSOTNsd2ZIS1hidFdkcF9HOWhnY2ZrU0hUdzVra0tKaVpRZXFiblRabjhzc21CMUl2MVlVZlBNWFZVZzBfV2czalhvZ1A4RFFUN1FHWXlnV1pYWGkwYnFIaG5GbWlxWEg0Tm5FY2hlTnI2dTdQRzJyeGprcw?oc=5",
+        "published": "Mon, 06 Apr 2020 07:00:00 GMT",
+        "source": "Bareksa.com",
+        "description": "Berita Hari Ini : OJK Restrukturisasi Kredit, Harga Emas Kembali Naik Bareksa.com"
+    },
+    {
+        "title": "OJK Atur Permodalan Bank Digital - Kompas.id",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBHazRPVnZYTXBNSUZxZXktVE5tSkpDMkEzS0tPMVN5WTlOS1lMeXh0UXVtM2pSaXBsc254UUY4OVI4STdBYVdRWlZVdzRDMGVKN1JzU3BjWjFWWWUzbWR0TUp2Wk5oR2JKTHZNdFljNA?oc=5",
+        "published": "Thu, 19 Aug 2021 07:00:00 GMT",
+        "source": "Kompas.id",
+        "description": "OJK Atur Permodalan Bank Digital Kompas.id"
+    },
+    {
+        "title": "Sowan ke Jokowi, Bos OJK Sebut Bunga Bank Menuju Single Digit - CNN Indonesia",
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMHRfNzcxQV9DclEwS2NiY19zOEVGcHJEcFhFOWxyR2Y3TmhPY0JnUkkyMkRsMEswRW5TSXJibGJUX0pZRE1jdWlDVmZHTmhLSUk5RjJOVm1JS3l6MENLb0p1Z01ubEZQM28yRE9XRzhfeXlKT0VYWExhQi1OczVhbHdjdnV5YnJSYmc2dmpWX1YzOVpfTXdFMlg4Rnh5anR5eDliUHBTMk1qc21aV1h3ZUExNGU5WFB6Zng5MHM2UQ?oc=5",
+        "published": "Fri, 21 Jul 2017 07:00:00 GMT",
+        "source": "CNN Indonesia",
+        "description": "Sowan ke Jokowi, Bos OJK Sebut Bunga Bank Menuju Single Digit CNN Indonesia"
+    },
+    {
+        "title": "OJK DIY Sebut Kenaikan BI Rate Tidak Langsung Pengaruhi Tingkat Suku Bunga Perbankan - Tribunjogja.com",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVTZzTVg2bi05RTA5bmJRb3JPcWhFMHFGMUNUSXhPWWRZZm5XZ2NnMklhZUNWdHRRdWZYbEFEMDFuMzBCY2VGbTk2RU5TWUFIbkVRQzdVdWl4blFhSUVlTkd4R05TaUpZWGlyTGQ5WTNpR1I3Ml9PTHBTQ2kza3dKbV9WS25sYk9BTG5oX1dPVHAwbUJnTEVjTEFiUTE5alVjc2J5Tk1vakd2aW42YjhzcjdGMEVEUlJ5TzNUc05mTE1KSDQ?oc=5",
+        "published": "Sun, 22 Nov 2026 12:01:34 GMT",
+        "source": "Tribunjogja.com",
+        "description": "OJK DIY Sebut Kenaikan BI Rate Tidak Langsung Pengaruhi Tingkat Suku Bunga Perbankan Tribunjogja.com"
+    },
+    {
+        "title": "Perang Suku Bunga Bank Mulai Memanas, OJK Beri Peringatan - Liputan6.com",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOczY4TmVNelloaU44VndTcGthaGtlQ1N2QnlwR3dibEFHN0ctYjdtT3RWNXRVLUVmWHgtQV9lMGxNUlpTMUMxNnFQaVNqbzZ4RzlzOFF0TXpCRnVsTkdwWnQ1Q0txMm5VWHBBU0ZlZDlka29OWGlaR3RrN2VuSWYwcWJSOTRCbS1vamFxLWFjSVU1UnFkaUFHZ3VOcmVscDY5bW9N0gGYAUFVX3lxTFBQdVU1ZDZ4VzVSdVlxMUxTQl9mMGVFZWNYR3huRWlBdnFweWFieWtEN210WElqQ2JWdlRkbzAzbnRPX0h3YkZJbzJoaV96d1lnM0R3LUhXWm5MNV9NS3FGRnVvMHh1bmJDdDZhU3VEVHV5dEk4a3NlR3BHTlRJdm1ocnFpb2NYN2hXLXVmOVc5YmNWUUdrbVla?oc=5",
+        "published": "Mon, 17 Aug 2026 07:00:00 GMT",
+        "source": "Liputan6.com",
+        "description": "Perang Suku Bunga Bank Mulai Memanas, OJK Beri Peringatan Liputan6.com"
+    },
+    {
+        "title": "OJK Imbau Bank Turunkan Bunga Kredit Seiring Penurunan BI Rate - Detik Sumsel - Detik Sumsel",
+        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVUNSZFpqSnBFWHVtOUZ4RmlVT2N4bTkzT25vejZJV2lHa3QtcVdKb3Q0NF9TQXVyN2s2ME03OUJmcjR0ZVZ3NGJqWVlSVUhvMHFYOEcxcmNuWXVESGJFcHdpb0FOTktQbEhNRlh1emlMV1o2LWZmR0VaaWlpa3hmZzhjYWNsd1pVVTFMNjFqblVIUHZaZWgzVHRaRGdrS2lJRlkxbHFmRkw4TGlYdGN5OdIBtgFBVV95cUxOdHVKQ09hRUx6eTJPRjFrODN1VTlOb3h3SG4yTU1zNjhMaTBpeTA1dVBnZ0NhVkpMMzctekRvOFhfazFFcEI0OWNSN3E0YXRNME1yWVV4Y1FySVNzYjlyNDE5RnRRcWlFdXVvLWo0LVpzanBpU2VNYkdkOF91UVQwYzZKT1EzQTN0bEpITndteTUzSENITU9FQ052NFNlNUFhNEltUjRSTjhaTE5PZDNYN0xkRTlxdw?oc=5",
+        "published": "Mon, 25 Aug 2025 07:00:00 GMT",
+        "source": "Detik Sumsel",
+        "description": "OJK Imbau Bank Turunkan Bunga Kredit Seiring Penurunan BI Rate - Detik Sumsel Detik Sumsel"
+    },
+    {
+        "title": "Danantara, Menkeu, hingga Menhut Kembangkan Eco Tourism di Way Kambas",
+        "link": "https://www.cnbcindonesia.com/market/20261123181646-17-787740/danantara-menkeu-hingga-menhut-kembangkan-eco-tourism-di-way-kambas",
+        "published": "Mon, 23 Nov 2026 18:24:02 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BPI Danantara bersama pemerintah rencanakan pengembangan Taman Nasional Way Kambas sebagai destinasi eco tourism."
+    },
+    {
+        "title": "Intip Kekayaan Amran Sulaiman-Sugiono, Dua Cawapres Pengganti Gibran",
+        "link": "https://www.cnbcindonesia.com/market/20261123180226-17-787733/intip-kekayaan-amran-sulaiman-sugiono-dua-cawapres-pengganti-gibran",
+        "published": "Mon, 23 Nov 2026 18:23:47 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Presiden Prabowo Subianto serahkan dua nama cawapres ke MPR: Andi Amran Sulaiman dan Sugiono."
+    },
+    {
+        "title": "Video: 2 Nama Cawapres Usulan Prabowo: Andi Amran Sulaiman dan Sugiono",
+        "link": "https://www.cnbcindonesia.com/market/20261123173353-19-787726/video-2-nama-cawapres-usulan-prabowo-andi-amran-sulaiman-sugiono",
+        "published": "Mon, 23 Nov 2026 17:56:12 +0700",
+        "source": "CNBC Indonesia",
+        "description": "2 Nama Cawapres Usulan Prabowo: Andi Amran Sulaiman dan Sugiono"
+    },
+    {
+        "title": "LPS Alihkan Anggaran Pembangunan Kantor di IKN, Ini Alasannya",
+        "link": "https://www.cnbcindonesia.com/market/20261123171720-17-787718/lps-alihkan-anggaran-pembangunan-kantor-di-ikn-ini-alasannya",
+        "published": "Mon, 23 Nov 2026 17:47:11 +0700",
+        "source": "CNBC Indonesia",
+        "description": "LPS mengalihkan anggaran penyediaan gedung kantor di IKN."
+    },
+    {
+        "title": "Laporan Keuangan Danantara Rilis 25 November 2026",
+        "link": "https://www.cnbcindonesia.com/market/20261123174251-17-787730/laporan-keuangan-danantara-rilis-25-november-2026",
+        "published": "Mon, 23 Nov 2026 17:45:02 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BPI Danantara Indonesia akan rilis laporan keuangan perdana pada 25 November 2026. CEO Rosan Roeslani pastikan laporan lengkap dan terbuka untuk publik."
+    },
+    {
+        "title": "Video: Prabowo Serahkan 2 Nama Calon Wapres Pengganti Gibran ke MPR RI",
+        "link": "https://www.cnbcindonesia.com/market/20261123172437-19-787723/video-prabowo-serahkan-2-nama-calon-wapres-pengganti-gibran-ke-mpr-ri",
+        "published": "Mon, 23 Nov 2026 17:31:33 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Prabowo Serahkan 2 Nama Calon Wapres Pengganti Gibran ke MPR RI"
+    },
+    {
+        "title": "Profil Ary Bastari, Dirut Baru Bayan Pengganti Low Tuck Kwong",
+        "link": "https://www.cnbcindonesia.com/market/20261123162436-17-787693/profil-ary-bastari-dirut-baru-bayan-pengganti-low-tuck-kwong",
+        "published": "Mon, 23 Nov 2026 16:32:27 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bayan Resources Tbk. menunjuk Ary Bastari sebagai Direktur Utama baru dalam RUPSLB, menggantikan Low Tuck Kwong."
+    },
+    {
+        "title": "Video:Bedah Jurus Obat Herbal Indonesia Laris Manis Hingga Luar Negeri",
+        "link": "https://www.cnbcindonesia.com/market/20261123154235-19-787676/videobedah-jurus-obat-herbal-indonesia-laris-manis-hingga-luar-negeri",
+        "published": "Mon, 23 Nov 2026 16:15:22 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bos Jamu Indonesia Ungkap Jurus Obat Herbal Laris Manis Hingga Luar Negeri"
+    },
+    {
+        "title": "Bayan (BYAN) Angkat Budi Waseso Jadi Komisaris Utama, Ini Profilnya",
+        "link": "https://www.cnbcindonesia.com/market/20261123160458-17-787686/bayan--byan--angkat-budi-waseso-jadi-komisaris-utama-ini-profilnya",
+        "published": "Mon, 23 Nov 2026 16:07:51 +0700",
+        "source": "CNBC Indonesia",
+        "description": "PT Bayan Resources mengangkat Budi Waseso sebagai Komisaris Utama Independen. RUPSLB juga menunjuk Indra Surya dan Tony Tribagus sebagai Komisaris."
+    },
+    {
+        "title": "IHSG Ditutup di Zona Hijau, Naik 1,35% ke Level 5.215,85",
+        "link": "https://www.cnbcindonesia.com/market/20261123153712-17-787685/ihsg-ditutup-di-zona-hijau-naik-135-ke-level-521585",
+        "published": "Mon, 23 Nov 2026 16:06:16 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG ditutup naik 1,35% pada perdagangan Senin 23 November 2026."
+    },
+    {
+        "title": "Video: Investor \"Happy\" Prabowo Telpon CEO MSCI Bahas Status Pasar RI",
+        "link": "https://www.cnbcindonesia.com/market/20261123145401-19-787645/video-investor-happy-prabowo-telpon-ceo-msci-bahas-status-pasar-ri",
+        "published": "Mon, 23 Nov 2026 15:55:38 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Investor \"Happy\" Prabowo Telpon CEO MSCI Demi Cegah RI Masuk Standalone Market"
+    },
+    {
+        "title": "Tok! Ary Bastari Dirut Bayan, Anak Haji Isam Masuk jadi Direktur",
+        "link": "https://www.cnbcindonesia.com/market/20261123155028-17-787679/tok-ary-bastari-dirut-bayan-anak-haji-isam-masuk-jadi-direktur",
+        "published": "Mon, 23 Nov 2026 15:52:50 +0700",
+        "source": "CNBC Indonesia",
+        "description": "PT Bayan Resources Tbk (BYAN) melakukan perombakan direksi dan komisaris. Ary Bastari jadi Direktur Utama."
+    },
+    {
+        "title": "Persaingan Bank Makin Panas, Bunga Deposito Naik Sentuh 6%",
+        "link": "https://www.cnbcindonesia.com/market/20261123151815-17-787663/persaingan-bank-makin-panas-bunga-deposito-naik-sentuh-6",
+        "published": "Mon, 23 Nov 2026 15:45:06 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Suku bunga simpanan perbankan naik per Oktober 2026, sementara suku bunga kredit stabil di 8,9%."
+    },
+    {
+        "title": "Bursa Korsel Goyang, Menkeu-Gubernur Bank Sentral Gelar Rapat Darurat",
+        "link": "https://www.cnbcindonesia.com/market/20261123143324-17-787638/bursa-korsel-goyang-menkeu-gubernur-bank-sentral-gelar-rapat-darurat",
+        "published": "Mon, 23 Nov 2026 15:15:25 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Otoritas keuangan Korea Selatan siapkan langkah stabilisasi pasar untuk meredam gejolak bursa saham."
+    },
+    {
+        "title": "Ribuan Karyawan Anthropic Jadi Kaya Raya Dalam Semalam",
+        "link": "https://www.cnbcindonesia.com/market/20261123131912-19-787606/ribuan-karyawan-anthropic-jadi-kaya-raya-dalam-semalam",
+        "published": "Mon, 23 Nov 2026 15:10:00 +0700",
+        "source": "CNBC Indonesia",
+        "description": ""
+    },
+    {
+        "title": "Rupiah Ditutup Menguat 0,38%, Dolar AS Turun ke Rp18.190",
+        "link": "https://www.cnbcindonesia.com/market/20261123150413-17-787653/rupiah-ditutup-menguat-038-dolar-as-turun-ke-rp18190",
+        "published": "Mon, 23 Nov 2026 15:08:44 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Rupiah berhasil berbalik menguat terhadap dolar Amerika Serikat (AS) dan menutup perdagangan Senin (23/11/2026) di zona hijau."
+    },
+    {
+        "title": "IPO, Bumi Atsiri Prima (BUAT) Tawarkan Saham Rp 135 - Rp 190 per Saham",
+        "link": "https://www.cnbcindonesia.com/market/20261123143442-17-787639/ipo-bumi-atsiri-prima--buat--tawarkan-saham-rp-135--rp-190-per-saham",
+        "published": "Mon, 23 Nov 2026 14:38:48 +0700",
+        "source": "CNBC Indonesia",
+        "description": "PT Bumi Atsiri Prima Tbk. (BUAT) akan IPO 534 juta saham, setara 25,02% modal. Target dana hingga Rp101,46 miliar untuk modal kerja."
+    },
+    {
+        "title": "Kejar Pertumbuhan DPK, Bank Jago (ARTO) Bidik Tabungan Anak",
+        "link": "https://www.cnbcindonesia.com/market/20261123141223-17-787630/kejar-pertumbuhan-dpk-bank-jago--arto--bidik-tabungan-anak",
+        "published": "Mon, 23 Nov 2026 14:16:03 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bank Jago Junior, layanan finansial untuk anak 10-17 tahun. Orang tua dapat mengatur transaksi dan memantau pengeluaran anak."
+    },
+    {
+        "title": "Video: Prabowo Telepon Bos MSCI Bicara soal Bursa RI",
+        "link": "https://www.cnbcindonesia.com/market/20261123131832-19-787605/video-prabowo-telepon-bos-msci-bicara-soal-bursa-ri",
+        "published": "Mon, 23 Nov 2026 14:13:15 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Prabowo Telepon Bos MSCI Bicara soal Bursa RI"
+    },
+    {
+        "title": "Dolar AS Masih Perkasa, Deposito Valas Bank Laris Manis",
+        "link": "https://www.cnbcindonesia.com/market/20261123125044-17-787582/dolar-as-masih-perkasa-deposito-valas-bank-laris-manis",
+        "published": "Mon, 23 Nov 2026 14:10:44 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Simpan perbankan dalam valas melonjak 20,4% YoY hingga Oktober 2026, seiring melemahnya rupiah."
+    },
+    {
+        "title": "IHSG Menguat Sepanjang Sesi I, Asing borong 10 Saham Ini",
+        "link": "https://www.cnbcindonesia.com/market/20261123135150-17-787619/ihsg-menguat-sepanjang-sesi-i-asing-borong-10-saham-ini",
+        "published": "Mon, 23 Nov 2026 13:57:56 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG ditutup menguat di level 5.228,24 dengan transaksi Rp6,43 triliun. Meskipun ada penjualan bersih asing."
+    },
+    {
+        "title": "Video: Jika RI Turun ke Standalone Market, Ini Efeknya ke IHSG-Rupiah",
+        "link": "https://www.cnbcindonesia.com/market/20261120150912-19-787015/video-jika-ri-turun-ke-standalone-market-ini-efeknya-ke-ihsg-rupiah",
+        "published": "Mon, 23 Nov 2026 13:53:21 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Jika Indonesia Turun ke Standalone Market, Ini Efeknya ke IHSG, Rupiah dan SBN"
+    },
+    {
+        "title": "BNI Perkuat Keamanan Siber, Jaga Keandalan Layanan dan Keamanan Nasabah",
+        "link": "https://www.cnbcindonesia.com/market/20261123132340-17-787612/bni-perkuat-keamanan-siber-jaga-keandalan-layanan-keamanan-nasabah",
+        "published": "Mon, 23 Nov 2026 13:34:23 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BNI memperkuat keamanan siber untuk melindungi data dan transaksi nasabah. Langkah ini penting dalam menjaga keandalan layanan perbankan di era digital."
+    },
+    {
+        "title": "Tangani Asuransi Bermasalah 2027, LPS Ajukan Anggaran Rp4,03 Triliun",
+        "link": "https://www.cnbcindonesia.com/market/20261123130205-17-787587/tangani-asuransi-bermasalah-2027-lps-ajukan-anggaran-rp403-triliun",
+        "published": "Mon, 23 Nov 2026 13:22:54 +0700",
+        "source": "CNBC Indonesia",
+        "description": "LPS ajukan RKAT 2027 sebesar Rp4,03 triliun kepada DPR."
+    },
+    {
+        "title": "IHSG Hijau Kala Bursa Asia Berdarah, Imbas Prabowo - Bos MSCI Bicara",
+        "link": "https://www.cnbcindonesia.com/market/20261123124613-17-787585/ihsg-hijau-kala-bursa-asia-berdarah-imbas-prabowo--bos-msci-bicara",
+        "published": "Mon, 23 Nov 2026 13:06:41 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bursa Asia-Pasifik melemah, namun IHSG menguat 1,59% di tengah pembicaraan Prabowo dengan CEO MSCI."
+    },
+    {
+        "title": "Jurus BEI Hadang Algo Trading yang Terindikasi Tak Wajar",
+        "link": "https://www.cnbcindonesia.com/market/20261123121436-17-787556/jurus-bei-hadang-algo-trading-yang-terindikasi-tak-wajar",
+        "published": "Mon, 23 Nov 2026 12:16:13 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bursa Efek Indonesia mulai 6 November 2026, membuka informasi publik terkait indikasi manipulasi perdagangan saham"
+    },
+    {
+        "title": "Akhiri Sesi I, IHSG Parkir Menguat 1,59 ke Level 5.228",
+        "link": "https://www.cnbcindonesia.com/market/20261123120334-17-787548/akhiri-sesi-i-ihsg-parkir-menguat-159-ke-level-5228",
+        "published": "Mon, 23 Nov 2026 12:06:50 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG ditutup menguat di level 5.228,24 dengan total transaksi Rp6,43 triliun. Pekan ini, pasar menghadapi sentimen penting."
+    },
+    {
+        "title": "Sosok Calon Direksi dan Komisaris BYAN, Ada Hatta Rajasa-Budi Waseso",
+        "link": "https://www.cnbcindonesia.com/market/20261123114000-17-787531/sosok-calon-direksi-komisaris-byan-ada-hatta-rajasa-budi-waseso",
+        "published": "Mon, 23 Nov 2026 11:55:01 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bayan Resources menggelar RUPSLB hari ini untuk persetujuan perubahan direksi dan komisaris."
+    },
+    {
+        "title": "Gak Alihkan Saham SMCB ke Publik, SMGR Kena Sanksi OJK",
+        "link": "https://www.cnbcindonesia.com/market/20261123102451-17-787489/gak-alihkan-saham-smcb-ke-publik-smgr-kena-sanksi-ojk",
+        "published": "Mon, 23 Nov 2026 11:50:52 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Otoritas Jasa Keuangan (OJK) resmi menjatuhkan sanksi denda kepada emiten semen pelat merah PT Semen Indonesia (Persero) Tbk (SMGR)."
+    },
+    {
+        "title": "Video:RI dan Uni Eropa Sepakati IEU-CEPA, IHSG dan Rupiah Kompak Menguat",
+        "link": "https://www.cnbcindonesia.com/market/20261123111030-19-787514/videori-dan-uni-eropa-sepakati-ieu-cepa-ihsg-rupiah-kompak-menguat",
+        "published": "Mon, 23 Nov 2026 11:30:02 +0700",
+        "source": "CNBC Indonesia",
+        "description": "RI dan Uni Eropa Sepakati IEU-CEPA, IHSG dan Rupiah Kompak Menguat"
+    },
+    {
+        "title": "IHSG Balik Melesat, Kabar Pertemuan Prabowo dan CEO MSCI Jadi Sorotan",
+        "link": "https://www.cnbcindonesia.com/market/20261123111147-17-787517/ihsg-balik-melesat-kabar-pertemuan-prabowo-dan-ceo-msci-jadi-sorotan",
+        "published": "Mon, 23 Nov 2026 11:15:42 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG menguat tajam 1,46% pada sesi I, Senin (23/11/2026). Pasar juga soroti pertemuan Prabowo dengan CEO MSCI terkait status pasar."
+    },
+    {
+        "title": "Begini Isi Pembicaraan Prabowo dengan Bos MSCI",
+        "link": "https://www.cnbcindonesia.com/market/20261123110416-17-787511/begini-isi-pembicaraan-prabowo-dengan-bos-msci",
+        "published": "Mon, 23 Nov 2026 11:09:09 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Morgan Stanley Capital International (MSCI) dan Presiden Prabowo membahas pasar modal Indonesia."
+    },
+    {
+        "title": "Prabowo Teleponan dengan Bos MSCI 1 Jam, Ray Dalio Perantara",
+        "link": "https://www.cnbcindonesia.com/market/20261123110312-17-787509/prabowo-teleponan-dengan-bos-msci-1-jam-ray-dalio-perantara",
+        "published": "Mon, 23 Nov 2026 11:06:23 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Presiden Prabowo dilaporkan melakukan komunikasi melalui telepon dengan CEO MSCI Henry Fernandez. Ray Dalio disebut menjadi perantaranya."
+    },
+    {
+        "title": "Nasib Sial 'Setan Merah' MU: Saham Loyo, Dibantai Liverpool 0-4",
+        "link": "https://www.cnbcindonesia.com/market/20261123103037-17-787492/nasib-sial-setan-merah-mu-saham-loyo-dibantai-liverpool-0-4",
+        "published": "Mon, 23 Nov 2026 11:05:38 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Manchester United mengalami kekalahan telak 0-4 dari Liverpool, sementara sahamnya turun 0,91% di NYSE."
+    },
+    {
+        "title": "Bos Asuransi Wajib Tahu! OJK Tetapkan Batas Solvabilitas Minimal 120%",
+        "link": "https://www.cnbcindonesia.com/market/20261123105045-17-787503/bos-asuransi-wajib-tahu-ojk-tetapkan-batas-solvabilitas-minimal-120",
+        "published": "Mon, 23 Nov 2026 10:55:16 +0700",
+        "source": "CNBC Indonesia",
+        "description": "OJK terbitkan aturan baru tentang solvabilitas perusahaan asuransi, menetapkan rasio minimum 120% untuk memperkuat manajemen risiko dan ketahanan keuangan."
+    },
+    {
+        "title": "DPR dan Ekonom Puji Langkah BI Naikkan BI Rate untuk Jaga Rupiah",
+        "link": "https://www.cnbcindonesia.com/market/20261123104451-17-787499/dpr-dan-ekonom-puji-langkah-bi-naikkan-bi-rate-untuk-jaga-rupiah",
+        "published": "Mon, 23 Nov 2026 10:51:24 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bank Indonesia menaikkan BI-Rate menjadi 6,00% untuk stabilisasi rupiah dan pengendalian inflasi. Kebijakan ini berdampak pada pinjaman masyarakat."
+    },
+    {
+        "title": "Breaking: Prabowo Telepon Bos MSCI Bicara soal Bursa RI",
+        "link": "https://www.cnbcindonesia.com/market/20261123104452-17-787500/breaking-prabowo-telepon-bos-msci-bicara-soal-bursa-ri",
+        "published": "Mon, 23 Nov 2026 10:50:35 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Presiden Prabowo Subianto bertemu CEO MSCI, Henry Fernandez, membahas alternatif untuk mencegah penurunan status pasar saham Indonesia."
+    },
+    {
+        "title": "Video; IEU-CEPA Ditandatangani, Emiten Sektor Apa Yang Diuntungkan?",
+        "link": "https://www.cnbcindonesia.com/market/20261123103016-19-787496/video-ieu-cepa-ditandatangani-emiten-sektor-apa-yang-diuntungkan",
+        "published": "Mon, 23 Nov 2026 10:50:01 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IEU-CEPA Ditandatangani, Emiten Sektor Apa Yang Diuntungkan?"
+    },
+    {
+        "title": "Bos Asuransi Poles Laporan Keuangan Bisa Kena Sanksi, Ini Aturannya",
+        "link": "https://www.cnbcindonesia.com/market/20261123103043-17-787493/bos-asuransi-poles-laporan-keuangan-bisa-kena-sanksi-ini-aturannya",
+        "published": "Mon, 23 Nov 2026 10:45:43 +0700",
+        "source": "CNBC Indonesia",
+        "description": "OJK memperketat pengawasan industri perasuransian dan dana pensiun. Larangan manipulasi laporan keuangan untuk meningkatkan integritas."
+    },
+    {
+        "title": "Video: Tekanan Jual Membayangi, Gimana Nasib IHSG dan Rupiah Awal Pekan?",
+        "link": "https://www.cnbcindonesia.com/market/20261123103024-19-787491/video-tekanan-jual-membayangi-gimana-nasib-ihsg-rupiah-awal-pekan",
+        "published": "Mon, 23 Nov 2026 10:37:16 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Tekanan Jual Masih Membayangi, Gimana Nasib IHSG dan Rupiah Awal Pekan?"
+    },
+    {
+        "title": "BEI 'Gembok' SMBC (BTPN) Usai Putuskan Mau Delisting",
+        "link": "https://www.cnbcindonesia.com/market/20261123095642-17-787471/bei-gembok-smbc--btpn--usai-putuskan-mau-delisting",
+        "published": "Mon, 23 Nov 2026 10:20:00 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BEI suspensi perdagangan saham BTPN setelah keputusan delisting sukarela. Saham BTPN naik 10,38% tahun ini sebelum suspensi."
+    },
+    {
+        "title": "Daftar Terbaru 10 Orang Terkaya RI, Bertambah atau Tergerus?",
+        "link": "https://www.cnbcindonesia.com/market/20261123093800-17-787468/daftar-terbaru-10-orang-terkaya-ri-bertambah-atau-tergerus",
+        "published": "Mon, 23 Nov 2026 10:05:01 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Peta kekayaan konglomerat Indonesia berubah, enam dari sepuluh orang terkaya mengalami penurunan. R. Budi Hartono tetap di posisi teratas dengan US$13,6 miliar."
+    },
+    {
+        "title": "Likuiditas Ketat, Peringkat Utang Anak Usaha Buma (DOID) Anjlok",
+        "link": "https://www.cnbcindonesia.com/market/20261123090455-17-787457/likuiditas-ketat-peringkat-utang-anak-usaha-buma--doid--anjlok",
+        "published": "Mon, 23 Nov 2026 09:35:56 +0700",
+        "source": "CNBC Indonesia",
+        "description": "PEFINDO telah menurunkan peringkat anak usaha PT BUMA Internasional Group Tbk. (DOID) PT Bukit Makmur Mandiri Utama (BOLD)."
+    },
+    {
+        "title": "Pagi Ini Rupiah Dibuka ke Rp 18.270 per Dolar AS",
+        "link": "https://www.cnbcindonesia.com/market/20261123091255-17-787458/pagi-ini-rupiah-dibuka-ke-rp-18270-per-dolar-as",
+        "published": "Mon, 23 Nov 2026 09:16:03 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Rupiah melemah 0,05% terhadap dolar AS di awal pekan. Ekspektasi kenaikan suku bunga The Fed mereda, memberi ruang bagi mata uang berkembang."
+    },
+    {
+        "title": "Jadwal RUPS Hari Ini: BYAN Rombak Pengurus, PTRO Bahas Rights Issue",
+        "link": "https://www.cnbcindonesia.com/market/20261123081440-17-787434/jadwal-rups-hari-ini-byan-rombak-pengurus-ptro-bahas-rights-issue",
+        "published": "Mon, 23 Nov 2026 09:05:40 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Hari ini, sejumlah emiten, termasuk PT Bayan Resources (BYAN), menggelar RUPS."
+    },
+    {
+        "title": "Awal Pekan, IHSG Dibuka Turun 0,24% ke Level 5.134",
+        "link": "https://www.cnbcindonesia.com/market/20261123085434-17-787447/awal-pekan-ihsg-dibuka-turun-024-ke-level-5134",
+        "published": "Mon, 23 Nov 2026 09:02:49 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG dibuka di zona merah pada 23 November 2026. Pasar saham menghadapi sentimen penting, termasuk perjanjian dagang RI-UE."
+    },
+    {
+        "title": "Sambut Awal Pekan, Simak 5 Saham Pilihan Hari Ini",
+        "link": "https://www.cnbcindonesia.com/market/20261123083712-17-787440/sambut-awal-pekan-simak-5-saham-pilihan-hari-ini",
+        "published": "Mon, 23 Nov 2026 08:51:25 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG terkoreksi 0,92% di level 5.146,33. Investor asing jual bersih Rp855 miliar. Sektor energi melemah."
+    },
+    {
+        "title": "Bursa Asia Melemah di Awal Pekan, Saham Teknologi Jadi Pemberat",
+        "link": "https://www.cnbcindonesia.com/market/20261123075210-17-787432/bursa-asia-melemah-di-awal-pekan-saham-teknologi-jadi-pemberat",
+        "published": "Mon, 23 Nov 2026 08:50:10 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Bursa saham Asia melemah pada Senin, 23 November 2026, dipimpin oleh Indeks Kospi yang turun 2,34%."
+    },
+    {
+        "title": "Di Tengah Aksi Jual, 10 Saham Ini jadi Incaran Asing",
+        "link": "https://www.cnbcindonesia.com/market/20261123074057-17-787419/di-tengah-aksi-jual-10-saham-ini-jadi-incaran-asing",
+        "published": "Mon, 23 Nov 2026 08:43:18 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG melemah 0,92% di akhir pekan lalu, turun 3,71% sepanjang minggu."
+    },
+    {
+        "title": "10 Saham Paling Banyak Dilepas Asing saat IHSG Babak Belur",
+        "link": "https://www.cnbcindonesia.com/market/20261123073208-17-787418/10-saham-paling-banyak-dilepas-asing-saat-ihsg-babak-belur",
+        "published": "Mon, 23 Nov 2026 08:40:36 +0700",
+        "source": "CNBC Indonesia",
+        "description": "IHSG mengalami penurunan selama lima hari berturut-turut, turun 3,71% pekan lalu."
+    },
+    {
+        "title": "6 Calon Emiten Antre IPO, 2 Perusahaan Beraset Jumbo",
+        "link": "https://www.cnbcindonesia.com/market/20261123060908-17-787401/6-calon-emiten-antre-ipo-2-perusahaan-beraset-jumbo",
+        "published": "Mon, 23 Nov 2026 08:15:08 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BEI mencatat 6 perusahaan siap IPO, 4 di antaranya skala menengah. Sektor material dasar dan kesehatan mendominasi antrean."
+    },
+    {
+        "title": "Deretan Saham Masuk Cum Date Dividen Pekan Ini, Cek Daftarnya!",
+        "link": "https://www.cnbcindonesia.com/market/20261123070412-17-787406/deretan-saham-masuk-cum-date-dividen-pekan-ini-cek-daftarnya",
+        "published": "Mon, 23 Nov 2026 07:20:12 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Investor perlu mencermati jadwal cum date dividen emiten pekan ini, 23-27 November 2026."
+    },
+    {
+        "title": "Berantas Manipulasi Saham, BEI Gandeng Tim Khusus dari Nasdaq",
+        "link": "https://www.cnbcindonesia.com/market/20261123060631-17-787400/berantas-manipulasi-saham-bei-gandeng-tim-khusus-dari-nasdaq",
+        "published": "Mon, 23 Nov 2026 07:00:31 +0700",
+        "source": "CNBC Indonesia",
+        "description": "BEI menggandeng Nasdaq untuk tingkatkan pengawasan perdagangan saham. Kerja sama ini mendukung reformasi pasar modal dan transparansi."
+    },
+    {
+        "title": "Kena Sanksi OJK, Siapa Sosok Dibalik Emiten Indosterling (TECH) ?",
+        "link": "https://www.cnbcindonesia.com/market/20261123060215-17-787399/kena-sanksi-ojk-siapa-sosok-dibalik-emiten-indosterling--tech--",
+        "published": "Mon, 23 Nov 2026 06:20:15 +0700",
+        "source": "CNBC Indonesia",
+        "description": "OJK menjatuhkan sanksi Rp690 juta kepada PT Indosterling Technomedia dan pengurusnya, termasuk Sean William Henley."
+    },
+    {
+        "title": "Dirut Bank di Banyumas Bikin Kredit Palsu ke 20 Nasabah Rp 1,72 M",
+        "link": "https://www.cnbcindonesia.com/market/20261122152545-17-787320/dirut-bank-di-banyumas-bikin-kredit-palsu-ke-20-nasabah-rp-172-m",
+        "published": "Sun, 22 Nov 2026 21:00:00 +0700",
+        "source": "CNBC Indonesia",
+        "description": "OJK menyelesaikan penyidikan dugaan tindak pidana perbankan syariah di PT BPRS Khasanah Ummat. Salah satu tersangka adalah sang dirut."
+    },
+    {
+        "title": "Pinjamkan KTP ke Teman Bisa Gagal Dapat KPR, Kok Bisa?",
+        "link": "https://www.cnbcindonesia.com/market/20261122121727-17-787297/pinjamkan-ktp-ke-teman-bisa-gagal-dapat-kpr-kok-bisa",
+        "published": "Sun, 22 Nov 2026 20:00:16 +0700",
+        "source": "CNBC Indonesia",
+        "description": "Awas ada risiko meminjamkan KTP untuk pinjaman online. Bisa-bisa gagal dalam pengajuan KPR. Kok bisa?"
     }
 ]
